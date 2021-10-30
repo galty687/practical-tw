@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-45957014-6']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>XML &mdash; 技术写作实用教程 2021 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "galty687/doc-x");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="prev" title="本书介绍" href="../about/about.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> 技术写作实用教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">研究介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/about.html">本书介绍</a></li>
+</ul>
+<p class="caption"><span class="caption-text">信息开发技术基础</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">XML</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">创建XML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#css">创建CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dtd">创建页面内DTD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dtdxml">创建独立DTD并关联至xml</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">技术写作实用教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>XML</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="xml">
+<h1>XML<a class="headerlink" href="#xml" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">date</dt>
+<dd class="field-odd"><p>2018-05-08</p>
+</dd>
+<dt class="field-even">author</dt>
+<dd class="field-even"><p>高志军</p>
+</dd>
+</dl>
+<p>XML是非常重要的存储数据的方式，作为技术写作从业人员，需要了解XML的基本技术，具体如下：</p>
+<ul class="simple">
+<li><p>XML</p></li>
+<li><p>CSS/XSLT</p></li>
+<li><p>DTD/Schema</p></li>
+</ul>
+<div class="section" id="id1">
+<h2>创建XML<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+
+<span class="nt">&lt;BusinessCard&gt;</span>
+    <span class="nt">&lt;Name&gt;</span>Gao Zhijun<span class="nt">&lt;/Name&gt;</span>
+    <span class="nt">&lt;phone</span> <span class="na">type=</span><span class="s">&quot;mobile&quot;</span><span class="nt">&gt;</span>+86 10 8264 9812<span class="nt">&lt;/phone&gt;</span>
+    <span class="nt">&lt;phone</span> <span class="na">type=</span><span class="s">&quot;work&quot;</span><span class="nt">&gt;</span>+86 10 6127 3510<span class="nt">&lt;/phone&gt;</span>
+    <span class="nt">&lt;phone</span> <span class="na">type=</span><span class="s">&quot;fax&quot;</span><span class="nt">&gt;</span>+86 10 6127 3510<span class="nt">&lt;/phone&gt;</span>
+    <span class="nt">&lt;email&gt;</span>gaozhijun@ss.pku.edu.cn<span class="nt">&lt;/email&gt;</span>
+<span class="nt">&lt;/BusinessCard&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="css">
+<h2>创建CSS<a class="headerlink" href="#css" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<div><div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">BusinessCard</span> <span class="p">{</span>
+    <span class="k">font-family</span><span class="p">:</span> <span class="n">Arial</span><span class="p">,</span> <span class="n">Helvetica</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="mh">#DACFE5</span><span class="p">;</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+    <span class="k">padding</span><span class="p">:</span> <span class="mi">10</span><span class="kt">pt</span><span class="p">;</span>
+    <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#0D3427</span><span class="p">;</span>
+    <span class="k">margin</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">text-align</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">Name</span> <span class="p">{</span>
+    <span class="k">color</span><span class="p">:</span> <span class="mh">#0D3427</span><span class="p">;</span>
+    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">140</span><span class="kt">%</span><span class="p">;</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+    <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">3</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">phone</span> <span class="p">{</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">90</span><span class="kt">%</span><span class="p">;</span>
+    <span class="k">color</span><span class="p">:</span> <span class="mh">#523819</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">90</span><span class="kt">%</span><span class="p">;</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">email</span> <span class="p">{</span>
+    <span class="k">color</span><span class="p">:</span> <span class="mh">#0D3427</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">90</span><span class="kt">%</span><span class="p">;</span>
+    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+    <span class="k">margin-top</span><span class="p">:</span> <span class="mi">3</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>关联CSS至XML</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?xml-stylesheet type=&quot;text/css&quot; href=&quot;businesscard.css&quot;?&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="dtd">
+<h2>创建页面内DTD<a class="headerlink" href="#dtd" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<div><div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE BusinessCard [</span>
+<span class="cp">&lt;!ELEMENT BusinessCard (Name, phone+, email?)&gt;</span>
+<span class="cp">&lt;!ELEMENT Name (#PCDATA)&gt;</span>
+<span class="cp">&lt;!ELEMENT phone (#PCDATA)&gt;</span>
+<span class="cp">&lt;!ATTLIST phone type (mobile | fax | Work | home) #REQUIRED&gt;</span>
+
+<span class="cp">&lt;!ELEMENT emai (#PCDATA)&gt;</span>
+
+]&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<p>DTD 参考：<a class="reference external" href="https://www.w3cschool.cn/dtd/dtd-intro.html">https://www.w3cschool.cn/dtd/dtd-intro.html</a></p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<ul class="simple">
+<li><p>#PCDATA (Parsed Character Data)，简单解释就是元素内只有文本，没有子元素。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="dtdxml">
+<h2>创建独立DTD并关联至xml<a class="headerlink" href="#dtdxml" title="永久链接至标题">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;!DOCTYPE BusinessCard SYSTEM &quot;businesscard.dtd&quot;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../about/about.html" class="btn btn-neutral float-left" title="本书介绍" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 高志军
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
