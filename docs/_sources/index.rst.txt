@@ -22,3 +22,12 @@
 
    XML/xml.rst
    XML/css.md
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: DITA 快速入门
+
+   dita/XSL-FO.md
+   dita/dita_stylesheet.md
+   dita/dita_resources.md
