@@ -26,8 +26,10 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: DITA 快速入门
+   :caption: 基于 DITA 的文档开发
 
+   dita/dita-quick-demo.md
+   dita/dita-dive-in.md
    dita/XSL-FO.md
    dita/dita_stylesheet.md
    dita/dita_resources.md

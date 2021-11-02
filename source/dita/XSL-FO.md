@@ -2,7 +2,7 @@
 
 ## 什么是XSL-FO
 
-XSL-FO  (Extensible Stylesheet Language Formating Object)是定义XML数据格式的语言，以前是XSL的一部分。后来对XSL进行了拆分，于是有了如下的三个技术：
+XSL-FO  (Extensible Stylesheet Language Formating Object) 是定义XML数据输出格式的语言，以前是XSL的一部分。后来对W3C对XSL进行了拆分，于是有了如下的三个技术：
 
 - XSLT，转换XML文件
 - XSL 或 XSL-FO，格式化XML文件
@@ -202,3 +202,24 @@ XML文件
 
 
 9. 使用FOP将XML输出为所需要的PDF。
+
+
+## 参考资料
+
+### xsl:fo 教程
+- [XSL-FOT Tutorial by W3C School](https://w3schools.sinsixx.com/xslfo/default.asp.htm)
+- [XSL Formatting Objects Tutorial](http://www.renderx.com/tutorial.html#Hello_World)
+
+### xsl:fo 参考资料
+
+- [XML Bible Chapter 16](http://www.ibiblio.org/xml/books/bible3/chapters/ch16.html)
+
+
+
+
+### 发布引擎
+
+- [Apache™ FOP](https://xmlgraphics.apache.org/fop/)
+- [ANTENNA House](https://www.antennahouse.com/)
+
+
