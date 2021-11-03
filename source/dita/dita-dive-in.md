@@ -84,4 +84,7 @@ Snippets.dita 片段中的提示信息
       </relrow>
     </reltable>
 ```
+## 相关资源
+
+- [DITA Notes](https://idratherbewriting.com/ditaval/)
 
