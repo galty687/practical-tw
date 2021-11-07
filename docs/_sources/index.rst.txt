@@ -30,6 +30,7 @@
 
    dita/dita-quick-demo.md
    dita/dita-dive-in.md
+   dita-examples/dita-source-reading.md
    dita/XSL-FO.md
    dita/dita_stylesheet.md
    dita/dita_resources.md

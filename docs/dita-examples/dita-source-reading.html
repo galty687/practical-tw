@@ -1,0 +1,413 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-45957014-6']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DITA源码阅读 &mdash; 技术写作实用教程 2021 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "galty687/doc-x");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="XSL-FO 样式" href="../dita/XSL-FO.html" />
+    <link rel="prev" title="DITA 深入了解" href="../dita/dita-dive-in.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> 技术写作实用教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">研究介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/about.html">本书介绍</a></li>
+</ul>
+<p class="caption"><span class="caption-text">信息开发技术基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../XML/xml.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../XML/css.html">CSS 基本介绍</a></li>
+</ul>
+<p class="caption"><span class="caption-text">基于 DITA 的文档开发</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../dita/dita-quick-demo.html">DITA 快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita/dita-dive-in.html">DITA 深入了解</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">DITA源码阅读</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">文档导航</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#choicetable">Choicetable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#footnote">footnote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#relationship-table">relationship table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#xml-element-reference">XML element reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dita/XSL-FO.html">XSL-FO 样式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita/dita_stylesheet.html">DITA PDF 样式开发</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita/dita_resources.html">DITA 资源</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">技术写作实用教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>DITA源码阅读</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="dita">
+<h1>DITA源码阅读<a class="headerlink" href="#dita" title="永久链接至标题">¶</a></h1>
+<p>正如学习编码时阅读软件源代码一样，学习DITA时，阅读文档的dita源码也是一种很好的学习习惯。这里以DITA-OT的文档为例，带大家阅读一下文档，并与dita源码相联系。</p>
+<div class="section" id="id1">
+<h2>文档<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id2">
+<h3>文档导航<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<p>如图片左侧导航所示，左侧为文档导航区，主要通过ditamap来实现。</p>
+<p><img alt="文档导航" src="../_images/navigation.png" /></p>
+<p>对应的ditamap源码</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;map</span> <span class="na">xml:lang=</span><span class="s">&quot;en-US&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;title&gt;</span>DITA Open Toolkit <span class="nt">&lt;keyword</span> <span class="na">keyref=</span><span class="s">&quot;release&quot;</span><span class="nt">/&gt;&lt;/title&gt;</span>
+
+  <span class="nt">&lt;topicref</span> <span class="na">keyref=</span><span class="s">&quot;landing-page&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;topicref</span> <span class="na">keyref=</span><span class="s">&quot;release-notes&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;topicref</span> <span class="na">keyref=</span><span class="s">&quot;release-history&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/topicref&gt;</span>
+  <span class="nt">&lt;topicref</span> <span class="na">keyref=</span><span class="s">&quot;installing-client&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;mapref</span> <span class="na">href=</span><span class="s">&quot;../topics/installing.ditamap&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/topicref&gt;</span>
+  <span class="nt">&lt;topicref</span> <span class="na">keyref=</span><span class="s">&quot;building-output&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;mapref</span> <span class="na">href=</span><span class="s">&quot;../topics/publishing.ditamap&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/topicref&gt;</span>
+  <span class="nt">&lt;topicref</span> <span class="na">keyref=</span><span class="s">&quot;input-formats&quot;</span> <span class="na">collection-type=</span><span class="s">&quot;family&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;mapref</span> <span class="na">href=</span><span class="s">&quot;../topics/input-formats.ditamap&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/topicref&gt;</span>
+  <span class="nt">&lt;topicref</span> <span class="na">keyref=</span><span class="s">&quot;output-formats&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;mapref</span> <span class="na">href=</span><span class="s">&quot;../topics/transformations.ditamap&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/topicref&gt;</span>
+  <span class="nt">&lt;topicref</span> <span class="na">keyref=</span><span class="s">&quot;parameters&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;mapref</span> <span class="na">href=</span><span class="s">&quot;../parameters/parameters.ditamap&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/topicref&gt;</span>
+  <span class="nt">&lt;topicref</span> <span class="na">keyref=</span><span class="s">&quot;html-customization&quot;</span> <span class="na">collection-type=</span><span class="s">&quot;family&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;mapref</span> <span class="na">href=</span><span class="s">&quot;../topics/html-customization.ditamap&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/topicref&gt;</span>
+  <span class="nt">&lt;topicref</span> <span class="na">keyref=</span><span class="s">&quot;pdf-customization&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;mapref</span> <span class="na">href=</span><span class="s">&quot;../topics/pdf-customization.ditamap&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/topicref&gt;</span>
+  <span class="nt">&lt;topicref</span> <span class="na">keyref=</span><span class="s">&quot;adding-plugins&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;mapref</span> <span class="na">href=</span><span class="s">&quot;../topics/using-plugins.ditamap&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/topicref&gt;</span>
+  <span class="nt">&lt;topicref</span> <span class="na">keyref=</span><span class="s">&quot;custom-plugins&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;mapref</span> <span class="na">href=</span><span class="s">&quot;../topics/creating-plugins.ditamap&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/topicref&gt;</span>
+  <span class="nt">&lt;topicref</span> <span class="na">keyref=</span><span class="s">&quot;troubleshooting-overview&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;mapref</span> <span class="na">href=</span><span class="s">&quot;../topics/troubleshooting.ditamap&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/topicref&gt;</span>
+  <span class="nt">&lt;topicref</span> <span class="na">keyref=</span><span class="s">&quot;reference&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;mapref</span> <span class="na">href=</span><span class="s">&quot;../reference/reference.ditamap&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/topicref&gt;</span>
+  <span class="nt">&lt;topicref</span> <span class="na">keyref=</span><span class="s">&quot;dita-and-dita-ot-resources&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;mapref</span> <span class="na">href=</span><span class="s">&quot;../topics/dita-resources.ditamap&quot;</span> <span class="na">toc=</span><span class="s">&quot;no&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;mapref</span> <span class="na">href=</span><span class="s">&quot;../topics/dita-ot-day-videos.ditamap&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/topicref&gt;</span>
+
+  <span class="nt">&lt;topicgroup</span> <span class="na">processing-role=</span><span class="s">&quot;resource-only&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;mapref</span> <span class="na">href=</span><span class="s">&quot;common-resources.ditamap&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/topicgroup&gt;</span>
+<span class="nt">&lt;/map&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="choicetable">
+<h3>Choicetable<a class="headerlink" href="#choicetable" title="永久链接至标题">¶</a></h3>
+<p>通过Tab的形式，实现了信息的折叠。</p>
+<p><img alt="choicetable" src="../_images/choicetable.png" /></p>
+<p>源代码</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>          <span class="o">&lt;</span><span class="n">chrow</span> <span class="n">platform</span><span class="o">=</span><span class="s2">&quot;linux mac&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">choption</span><span class="o">&gt;</span><span class="n">Linux</span> <span class="ow">or</span> <span class="n">macOS</span><span class="o">&amp;</span><span class="c1">#xA0;&lt;/choption&gt;</span>
+            <span class="o">&lt;</span><span class="n">chdesc</span><span class="o">&gt;</span><span class="n">Type</span> <span class="o">&lt;</span><span class="n">userinput</span><span class="o">&gt;</span><span class="n">Terminal</span><span class="o">&lt;/</span><span class="n">userinput</span><span class="o">&gt;.&lt;/</span><span class="n">chdesc</span><span class="o">&gt;</span>
+          <span class="o">&lt;/</span><span class="n">chrow</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">chrow</span> <span class="n">platform</span><span class="o">=</span><span class="s2">&quot;windows&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">choption</span><span class="o">&gt;</span><span class="n">Windows</span><span class="o">&lt;/</span><span class="n">choption</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">chdesc</span><span class="o">&gt;</span><span class="n">Type</span> <span class="o">&lt;</span><span class="n">userinput</span><span class="o">&gt;</span><span class="n">Command</span> <span class="n">Prompt</span><span class="o">&lt;/</span><span class="n">userinput</span><span class="o">&gt;.&lt;/</span><span class="n">chdesc</span><span class="o">&gt;</span>
+          <span class="o">&lt;/</span><span class="n">chrow</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">choicetable</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="footnote">
+<h3>footnote<a class="headerlink" href="#footnote" title="永久链接至标题">¶</a></h3>
+<p><img alt="footnote" src="../_images/footnote.png" />
+<img alt="footnote result " src="../_images/footnote-result.png" /></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span> <span class="nt">&lt;fn&gt;</span>Homebrew’s default installation location depends on the operating system architecture:
+          <span class="nt">&lt;ul&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;filepath&gt;</span>/usr/local<span class="nt">&lt;/filepath&gt;</span> on macOS Intel<span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;filepath&gt;</span>/opt/homebrew<span class="nt">&lt;/filepath&gt;</span> on macOS ARM<span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;filepath&gt;</span>/home/linuxbrew/.linuxbrew<span class="nt">&lt;/filepath&gt;</span> on Linux<span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;/ul&gt;</span>
+ <span class="nt">&lt;/fn&gt;</span> to ensure that Homebrew-installed software
+</pre></div>
+</div>
+</div>
+<div class="section" id="relationship-table">
+<h3>relationship table<a class="headerlink" href="#relationship-table" title="永久链接至标题">¶</a></h3>
+<p><img alt="relationship table" src="../_images/reltables.png" /></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>   <span class="nt">&lt;title&gt;</span>CTR: Ant topics<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;relheader&gt;</span>
+      <span class="nt">&lt;relcolspec</span> <span class="na">type=</span><span class="s">&quot;concept&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;relcolspec</span> <span class="na">type=</span><span class="s">&quot;task&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;relcolspec</span> <span class="na">type=</span><span class="s">&quot;reference&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/relheader&gt;</span>
+    <span class="nt">&lt;relrow&gt;</span>
+      <span class="nt">&lt;relcell&gt;</span>
+        <span class="nt">&lt;topicref</span> <span class="na">keyref=</span><span class="s">&quot;ant&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/relcell&gt;</span>
+      <span class="nt">&lt;relcell&gt;</span>
+        <span class="nt">&lt;topicgroup</span> <span class="na">collection-type=</span><span class="s">&quot;family&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;topicref</span> <span class="na">keyref=</span><span class="s">&quot;building-with-ant&quot;</span><span class="nt">/&gt;</span>
+          <span class="nt">&lt;topicref</span> <span class="na">keyref=</span><span class="s">&quot;creating-an-ant-build-script&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/topicgroup&gt;</span>
+      <span class="nt">&lt;/relcell&gt;</span>
+      <span class="nt">&lt;relcell&gt;</span>
+        <span class="nt">&lt;topicref</span> <span class="na">keyref=</span><span class="s">&quot;parameters_intro&quot;</span> <span class="na">linking=</span><span class="s">&quot;targetonly&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;topicref</span> <span class="na">keyref=</span><span class="s">&quot;ant-manual&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;topicmeta&gt;</span>
+            <span class="nt">&lt;linktext&gt;</span>Apache Ant documentation<span class="nt">&lt;/linktext&gt;</span>
+          <span class="nt">&lt;/topicmeta&gt;</span>
+        <span class="nt">&lt;/topicref&gt;</span>
+      <span class="nt">&lt;/relcell&gt;</span>
+    <span class="nt">&lt;/relrow&gt;</span>
+    <span class="nt">&lt;relrow&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="xml-element-reference">
+<h3>XML element reference<a class="headerlink" href="#xml-element-reference" title="永久链接至标题">¶</a></h3>
+<p>引用XML文件中的xml元素</p>
+<p><img alt="XML Element " src="../_images/xmlelement.png" /></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>      <span class="nt">&lt;title&gt;&lt;xmlelement&gt;</span>plugin<span class="nt">&lt;/xmlelement&gt;&lt;/title&gt;</span>
+      <span class="nt">&lt;p&gt;</span>The root element of the <span class="nt">&lt;filepath&gt;</span>plugin.xml<span class="nt">&lt;/filepath&gt;</span> file is <span class="nt">&lt;xmlelement&gt;</span>plugin<span class="nt">&lt;/xmlelement&gt;</span>, which has a required <span class="nt">&lt;xmlatt&gt;</span>id<span class="nt">&lt;/xmlatt&gt;</span> attribute set to the unique plug-in identifier.<span class="nt">&lt;/p&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../dita/XSL-FO.html" class="btn btn-neutral float-right" title="XSL-FO 样式" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../dita/dita-dive-in.html" class="btn btn-neutral float-left" title="DITA 深入了解" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 高志军
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
