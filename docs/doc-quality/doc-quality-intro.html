@@ -1,0 +1,384 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-45957014-6']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>技术文档质量 &mdash; 技术写作实用教程 2021 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "galty687/doc-x");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="prev" title="DITA 资源" href="../dita/dita_resources.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> 技术写作实用教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">研究介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/about.html">本书介绍</a></li>
+</ul>
+<p class="caption"><span class="caption-text">信息开发技术基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../XML/xml.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../XML/css.html">CSS 基本介绍</a></li>
+</ul>
+<p class="caption"><span class="caption-text">基于 DITA 的文档开发</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dita/dita-quick-demo.html">DITA 快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita/dita-dive-in.html">DITA 深入了解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita-examples/dita-source-reading.html">DITA源码阅读</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita/XSL-FO.html">XSL-FO 样式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita/dita_stylesheet.html">DITA PDF 样式开发</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita/dita_resources.html">DITA 资源</a></li>
+</ul>
+<p class="caption"><span class="caption-text">技术文档质量</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">技术文档质量</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">人</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">流程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">工具</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">技术文档质量的层次</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">准确性</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">内容结构标准</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">受限语言</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">语言检测工具</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">可用性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">用户体验/信息体验设计</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">技术写作实用教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>技术文档质量</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>技术文档质量<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>技术文档的质量是一个系统工程，整体是由“人+流程+工具”来保证的。</p>
+<div class="section" id="id2">
+<h2>人<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>从技术写作的人员应接受过相应的教育，这里可以是某个技术写作的本科专业，或者通过了系统化的培训来获得，例如 <a class="reference external" href="https://www.stc.org/certification/">STC Certification</a>、<a class="reference external" href="https://www.technical-communication.org/technical-writing/tekom-certification">Tekom Certification</a> 和中国标准化协会技术传播服务委员会均有相应的课程。</p>
+</div>
+<div class="section" id="id3">
+<h2>流程<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>流程是做一件事情的基本步骤，例如我们可以参加 <a class="reference external" href="https://www.iso.org/standard/71620.html">IEC 82079</a> 的流程规定。</p>
+</div>
+<div class="section" id="id4">
+<h2>工具<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>使用各种工具降低人的负担，提高流程的可靠性。</p>
+</div>
+<div class="section" id="id5">
+<h2>技术文档质量的层次<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>准确性</p></li>
+<li><p>可用性</p></li>
+<li><p>用户体验/信息体验</p></li>
+</ul>
+<p>好的文档应能确保内容的准确性，在此基础之上要考虑可用性，最后考虑整体的信息体验。</p>
+<div class="section" id="id6">
+<h3>准确性<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>在确保内容准确性上，目前通常从如下几个方面做约束。</p>
+<div class="section" id="id7">
+<h4>内容结构标准<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h4>
+<p>使用DITA将内容的结构和模块进行标准化。使用oXygen XML 基于 DTD 或 Schema 来 Validate DITA 内容，确保DITA的正确性。</p>
+</div>
+<div class="section" id="id8">
+<h4>受限语言<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h4>
+<p>使用受限语言降低内容的难度，确保内容的一致性。例如 ASD-STE语言。</p>
+</div>
+<div class="section" id="id9">
+<h4>语言检测工具<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h4>
+<p>文本的准确性通常可以从以下三个方面来检测。</p>
+<ul class="simple">
+<li><p>拼写</p></li>
+<li><p>句法</p></li>
+<li><p>风格</p></li>
+</ul>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>工具</p></th>
+<th class="head"><p>性质</p></th>
+<th class="head"><p>功能</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://languagetool.org/">Langauge Tool</a></p></td>
+<td><p>开源+商业</p></td>
+<td><p>可自定义规则检测文档风格</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://proselint.com/">ProseLint</a></p></td>
+<td><p>开源</p></td>
+<td><p>可通过命令行检测文本质量</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.acrolinx.com/">Acrolinx</a></p></td>
+<td><p>商业</p></td>
+<td><p>完整的文档质量检查解决方案</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>指标</p></th>
+<th class="head"><p>含义</p></th>
+<th class="head"><p>计算方式</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Readability</p></td>
+<td><p>评价文档阅读的难易程度</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Coh-Metrix</p></td>
+<td><p>评价文档的衔接程度</p></td>
+<td><p><a class="reference external" href="http://cohmetrix.memphis.edu/cohmetrixhome/documentation_indices.html">文档</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>可用性<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<p>内容准确的资料用户未必觉得好用，重要的资料还需要做可用性测试，确保内容的可用性。</p>
+<p>关注的指标：</p>
+<ul class="simple">
+<li><p>完成率。使用资料完成任务的概率。</p></li>
+<li><p>效率。使用资料完成任务的时间。</p></li>
+<li><p>满意度。大众使用资料后的满意程度。</p></li>
+</ul>
+</div>
+<div class="section" id="id11">
+<h2>用户体验/信息体验设计<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<p>在确保了内容准确性和可用性的基础之上，则可以探索内容的信息体验，让用户阅读时有赏心悦目，喜闻乐见的同时，增强用户粘性 。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../dita/dita_resources.html" class="btn btn-neutral float-left" title="DITA 资源" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 高志军
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
