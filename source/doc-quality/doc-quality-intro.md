@@ -4,7 +4,7 @@
 
 ## 人
 
-从技术写作的人员应接受过相应的教育，这里可以是某个技术写作的本科专业，或者通过了系统化的培训来获得，例如 [STC Certification](https://www.stc.org/certification/)、[Tekom Certification](https://www.technical-communication.org/technical-writing/tekom-certification) 和中国标准化协会技术传播服务委员会均有相应的课程。
+从事技术写作的人员应接受过相应的教育，这里可以是某个技术写作的本科专业，或者通过了系统化的培训来获得，例如 [STC Certification](https://www.stc.org/certification/)、[Tekom Certification](https://www.technical-communication.org/technical-writing/tekom-certification) 和中国标准化协会技术传播服务委员会均有相应的课程。
 
 
 ## 流程
@@ -77,3 +77,12 @@
 ## 用户体验/信息体验设计
 
 在确保了内容准确性和可用性的基础之上，则可以探索内容的信息体验，让用户阅读时有赏心悦目，喜闻乐见的同时，增强用户粘性 。
+
+
+
+[comment]: # "This actually is the most platform independent comment"
+
+
+
+[](Comment text goes here)
+

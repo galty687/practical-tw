@@ -136,16 +136,27 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li class="toctree-l1"><a class="reference internal" href="xml.html">XML</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">CSS 基本介绍</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">什么是CSS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">CSS语法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">CSS语法</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">选择元素</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">选择“类”</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id">选择 id</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <p class="caption"><span class="caption-text">基于 DITA 的文档开发</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../dita/dita-quick-demo.html">DITA 快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita/dita-dive-in.html">DITA 深入了解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita-examples/dita-source-reading.html">DITA源码阅读</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dita/XSL-FO.html">XSL-FO 样式</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dita/dita_stylesheet.html">DITA PDF 样式开发</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dita/dita_resources.html">DITA 资源</a></li>
+</ul>
+<p class="caption"><span class="caption-text">技术文档质量</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../doc-quality/doc-quality-intro.html">技术文档质量</a></li>
 </ul>
 
             
@@ -218,7 +229,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <div class="section" id="id2">
 <h2>CSS语法<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Selector</span> <span class="pre">{property1:</span> <span class="pre">value1;</span> <span class="pre">property2:</span> <span class="pre">value2}</span></code></p>
-<p>常见写法</p>
+<div class="section" id="id3">
+<h3>选择元素<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">selector</span> <span class="p">{</span>
   <span class="n">property1</span><span class="p">:</span> <span class="n">value1</span><span class="p">;</span>
   <span class="n">property2</span><span class="p">:</span> <span class="n">value2</span><span class="p">;</span>
@@ -231,7 +243,9 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>选择类</p>
+</div>
+<div class="section" id="id4">
+<h3>选择“类”<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;big-header&quot;</span><span class="p">&gt;</span>Title<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;index.html&quot;</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </pre></div>
@@ -260,6 +274,9 @@ commentsRunWhenDOMLoaded(addUtterances);
 <span class="p">.</span><span class="nc">bth-3</span> <span class="p">{</span><span class="k">background-color</span><span class="p">:</span> <span class="kc">purple</span><span class="p">}</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="id">
+<h3>选择 id<a class="headerlink" href="#id" title="永久链接至标题">¶</a></h3>
 <div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">#</span><span class="nn">id</span> <span class="p">{</span>
   <span class="n">property</span><span class="p">:</span> <span class="n">value</span><span class="p">;</span>
 <span class="p">}</span>
@@ -285,6 +302,11 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#big-blue.large.blue</span>
 </pre></div>
+</div>
+<p>参考资源</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://cssreference.io">CSS Reference </a></p></li>
+</ul>
 </div>
 </div>
 </div>

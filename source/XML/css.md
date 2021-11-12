@@ -12,7 +12,7 @@
 
 
 
-常见写法
+### 选择元素
 
 ```css
 selector {
@@ -31,7 +31,7 @@ h1 {
 
 
 
-选择类
+### 选择“类”
 
 ```html
 <h1 class="big-header">Title</h1>
@@ -73,7 +73,7 @@ h1 {
 .bth-3 {background-color: purple}
 ```
 
-
+### 选择 id
 
 ```css
 #id {
@@ -115,4 +115,5 @@ h1.large-header {
 #big-blue.large.blue
 ```
 
- 
+参考资源
+- [CSS Reference ](https://cssreference.io)
