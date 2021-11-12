@@ -35,6 +35,7 @@ extensions = [
     'sphinxcontrib.googleanalytics',
     'sphinx.ext.todo',
     'sphinx_comments',
+    'sphinx_copybutton',
     'myst_parser'
 ]
 
