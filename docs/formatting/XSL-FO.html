@@ -1,0 +1,485 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-45957014-6']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>XSL-FO 样式 &mdash; 技术写作实用教程 2021 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "galty687/doc-x");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="DITA Plugins" href="dita-plugins.html" />
+    <link rel="prev" title="DITA 资源" href="../dita/dita_resources.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> 技术写作实用教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">研究介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/about.html">本书介绍</a></li>
+</ul>
+<p class="caption"><span class="caption-text">信息开发技术基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../XML/xml.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../XML/css.html">CSS 基本介绍</a></li>
+</ul>
+<p class="caption"><span class="caption-text">基于 DITA 的内容写作</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dita/dita-quick-demo.html">DITA 快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita/Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita/dita-dive-in.html">DITA 深入了解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita-examples/dita-source-reading.html">DITA源码阅读</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita/dita_resources.html">DITA 资源</a></li>
+</ul>
+<p class="caption"><span class="caption-text">DITA的样式表开发</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">XSL-FO 样式</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">什么是XSL-FO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">上手练习</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">XSL-FO语法说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">参考资料</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">xsl:fo 教程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">xsl:fo 参考资料</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">发布引擎</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dita-plugins.html">DITA Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dita_stylesheet.html">DITA PDF 样式开发</a></li>
+</ul>
+<p class="caption"><span class="caption-text">技术文档质量</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../doc-quality/doc-quality-intro.html">技术文档质量</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">技术写作实用教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>XSL-FO 样式</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="xsl-fo">
+<h1>XSL-FO 样式<a class="headerlink" href="#xsl-fo" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>什么是XSL-FO<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>XSL-FO  (Extensible Stylesheet Language Formating Object) 是定义XML数据输出格式的语言，以前是XSL的一部分。后来对W3C对XSL进行了拆分，于是有了如下的三个技术：</p>
+<ul class="simple">
+<li><p>XSLT，转换XML文件</p></li>
+<li><p>XSL 或 XSL-FO，格式化XML文件</p></li>
+<li><p>XPath，选择XML元素和属性</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>上手练习<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>之前我们练习了使用CSS输出XML的样式，现在我们来学习如何使用xsl-fo来定义XML的样式，并输出为PDF。</p>
+<p>XML文件</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+
+<span class="nt">&lt;businesscard&gt;</span>
+   
+   <span class="nt">&lt;name&gt;</span>Zhijun Gao<span class="nt">&lt;/name&gt;</span>
+   <span class="nt">&lt;tel&gt;</span>010-11112222<span class="nt">&lt;/tel&gt;</span>
+   <span class="nt">&lt;phone&gt;</span>11122223333<span class="nt">&lt;/phone&gt;</span>
+   <span class="nt">&lt;email&gt;</span>gaozhijun@ss.pku.edu.cn<span class="nt">&lt;/email&gt;</span>
+   <span class="nt">&lt;profession&gt;</span>Researcher, Technical Communicator<span class="nt">&lt;/profession&gt;</span>
+   
+<span class="nt">&lt;/businesscard&gt;</span>
+</pre></div>
+</div>
+<p>再解释各行语言之前，我们先开始上手写一些XSL-FO语句。</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span> <span class="na">version=</span><span class="s">&quot;1.0&quot;</span>
+    <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span>
+    <span class="na">xmlns:fo=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Format&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsl:output</span> <span class="na">method=</span><span class="s">&quot;xml&quot;</span> <span class="na">indent=</span><span class="s">&quot;yes&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;fo:root&gt;</span>
+            <span class="nt">&lt;fo:layout-master-set&gt;</span>
+                <span class="nt">&lt;fo:simple-page-master</span> <span class="na">master-name=</span><span class="s">&quot;A4-portrait&quot;</span>
+                    <span class="na">page-height=</span><span class="s">&quot;29.7cm&quot;</span> <span class="na">page-width=</span><span class="s">&quot;21.0cm&quot;</span> <span class="na">margin=</span><span class="s">&quot;2cm&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;fo:region-body</span>   <span class="na">margin=</span><span class="s">&quot;3cm&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;fo:region-before</span> <span class="na">extent=</span><span class="s">&quot;2cm&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;fo:region-after</span>  <span class="na">extent=</span><span class="s">&quot;2cm&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;fo:region-start</span>  <span class="na">extent=</span><span class="s">&quot;2cm&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;fo:region-end</span>    <span class="na">extent=</span><span class="s">&quot;2cm&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/fo:simple-page-master&gt;</span>
+            <span class="nt">&lt;/fo:layout-master-set&gt;</span>
+            <span class="nt">&lt;fo:page-sequence</span> <span class="na">master-reference=</span><span class="s">&quot;A4-portrait&quot;</span><span class="nt">&gt;</span>
+                
+                
+                <span class="nt">&lt;fo:flow</span> <span class="na">flow-name=</span><span class="s">&quot;xsl-region-body&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;fo:block</span>
+                        <span class="na">border-width=</span><span class="s">&quot;1mm&quot;</span> 
+                        <span class="na">font-size=</span><span class="s">&quot;20pt&quot;</span>
+                        <span class="na">color=</span><span class="s">&quot;red&quot;</span>
+                        <span class="na">font-family=</span><span class="s">&quot;Microsoft YaHei&quot;</span>
+                        <span class="na">text-decoration=</span><span class="s">&quot;underline&quot;</span><span class="nt">&gt;</span>
+                        Brief Introduction
+                    <span class="nt">&lt;/fo:block&gt;</span>
+                    
+                    <span class="nt">&lt;fo:block&gt;</span>       
+                        
+                        <span class="nt">&lt;fo:external-graphic</span> <span class="na">src=</span><span class="s">&quot;url(&#39;test.jpeg&#39;)&quot;</span>
+                        <span class="na">content-height=</span><span class="s">&quot;5em&quot;</span> <span class="na">content-width=</span><span class="s">&quot;5em&quot;</span><span class="nt">/&gt;</span>
+                    
+                    <span class="nt">&lt;/fo:block&gt;</span>
+                    
+                    <span class="nt">&lt;fo:block</span> <span class="na">space-before=</span><span class="s">&quot;2mm&quot;</span>  <span class="na">font-family=</span><span class="s">&quot;Microsoft YaHei&quot;</span><span class="nt">&gt;</span>
+                        Name: <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;businesscard/name&quot;</span><span class="nt">/&gt;</span>
+                 
+                    <span class="nt">&lt;/fo:block&gt;</span>
+                    <span class="nt">&lt;fo:block&gt;</span>
+                        Phone: <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;businesscard/phone&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/fo:block&gt;</span>
+                    <span class="nt">&lt;fo:block&gt;</span>
+                        tel: <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;businesscard/tel&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/fo:block&gt;</span>
+                    <span class="nt">&lt;fo:block&gt;</span>
+                        email: <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;businesscard/email&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/fo:block&gt;</span>
+                    <span class="nt">&lt;fo:block&gt;</span>
+                        profession: <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;businesscard/profession&quot;</span><span class="nt">/&gt;</span>
+                
+                    <span class="nt">&lt;/fo:block&gt;</span>
+  
+                <span class="nt">&lt;/fo:flow&gt;</span>
+                
+            <span class="nt">&lt;/fo:page-sequence&gt;</span>
+        <span class="nt">&lt;/fo:root&gt;</span>
+    <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>XSL-FO语法说明<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<ol>
+<li><p>声明自己是XML文件，确实xsl-fo本身也是xml格式。</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>对所有元素生效，XPath语句 “/”</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span> <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>定义页面模板，可以是一页或多页</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;fo:layout-master-set&gt;</span>
+  <span class="c">&lt;!-- All page templates go here --&gt;</span>
+<span class="nt">&lt;/fo:layout-master-set&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>定义单页模板，每个模板的名称必须唯一(<code class="docutils literal notranslate"><span class="pre">master-name</span></code>)，</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+&lt;fo:simple-page-master master-name=&quot;A4-portrait&quot;&gt;
+  &lt;!-- One page template goes here --&gt;
+&lt;/fo:simple-page-master&gt;
+</pre></div>
+</div>
+<p>这里定义的就是竖版A4的样式。需要注意的是这里的A4只是一个名字，软件并不能通过A4这个名称就知道具体的定义，所以我们依然需要描述什么是竖版A4样式。A4纸的ISO 216的定义规格是29.7CM ×21.0CM，翻译为 xml 语句为：</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>page-height=&quot;29.7cm&quot; page-width=&quot;21.0cm&quot;
+</pre></div>
+</div>
+</li>
+<li><p>定义各区块的属性。</p>
+<p>在解释具体属性之前，我们先看一下FO页面的区块布局。</p>
+<ul class="simple">
+<li><p>页面主体 <code class="docutils literal notranslate"><span class="pre">region-body</span></code></p></li>
+<li><p>页眉<code class="docutils literal notranslate"><span class="pre">region-before</span></code></p></li>
+<li><p>页脚<code class="docutils literal notranslate"><span class="pre">region-after</span></code></p></li>
+<li><p>左侧边 <code class="docutils literal notranslate"><span class="pre">region-start</span></code></p></li>
+<li><p>右侧边<code class="docutils literal notranslate"><span class="pre">region-end</span></code></p></li>
+</ul>
+<p><img alt="fo 页面区域" src="formatting/images/fo-regions.jpeg" /></p>
+</li>
+<li><p>定义fl ow和block</p>
+<p>页面和区域定义好之后，就需要定义Flow 和 Block的信息了。flow是由block组成的。</p>
+<p>在正文区定一个 flow，飞入到 “xsl-region-body”区域，这个任务翻译为xml语句，则为：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    &lt;fo:flow flow-name=&quot;xsl-region-body&quot;&gt;
+      &lt;fo:block&gt;
+        &lt;!-- Output goes here --&gt;
+      &lt;/fo:block&gt;
+    &lt;/fo:flow&gt;
+</pre></div>
+</div>
+</li>
+<li><p>定义标题Block的属性。
+Flow中的每个内容都是一个block，都需要分别来定义。</p>
+<p><img alt="block 模型" src="formatting/images/block-models.png" /></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">fo</span><span class="p">:</span><span class="n">block</span>
+<span class="n">border</span><span class="o">-</span><span class="n">width</span><span class="o">=</span><span class="s2">&quot;1mm&quot;</span> 
+<span class="n">font</span><span class="o">-</span><span class="n">size</span><span class="o">=</span><span class="s2">&quot;20pt&quot;</span>
+<span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span>
+<span class="n">font</span><span class="o">-</span><span class="n">family</span><span class="o">=</span><span class="s2">&quot;Microsoft YaHei&quot;</span>
+<span class="n">text</span><span class="o">-</span><span class="n">decoration</span><span class="o">=</span><span class="s2">&quot;underline&quot;</span><span class="o">&gt;</span>
+<span class="n">Brief</span> <span class="n">Introduction</span>
+<span class="o">&lt;/</span><span class="n">fo</span><span class="p">:</span><span class="n">block</span><span class="o">&gt;</span>
+  
+</pre></div>
+</div>
+</li>
+<li><p>显示XML的值。</p>
+<p>例如名片的名字信息，我们定义了其block属性后，还需要将其xml中对应值读取过来，这里需要使用XPath预计。</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>  <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;businesscard/name&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>使用FOP将XML输出为所需要的PDF。</p></li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h2>参考资料<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id5">
+<h3>xsl:fo 教程<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://w3schools.sinsixx.com/xslfo/default.asp.htm">XSL-FOT Tutorial by W3C School</a></p></li>
+<li><p><a class="reference external" href="http://www.renderx.com/tutorial.html#Hello_World">XSL Formatting Objects Tutorial</a></p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h3>xsl:fo 参考资料<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.ibiblio.org/xml/books/bible3/chapters/ch16.html">XML Bible Chapter 16</a></p></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>发布引擎<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://xmlgraphics.apache.org/fop/">Apache™ FOP</a></p></li>
+<li><p><a class="reference external" href="https://www.antennahouse.com/">ANTENNA House</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dita-plugins.html" class="btn btn-neutral float-right" title="DITA Plugins" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../dita/dita_resources.html" class="btn btn-neutral float-left" title="DITA 资源" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 高志军
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

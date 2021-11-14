@@ -1,0 +1,436 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-45957014-6']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Troubleshooting &mdash; 技术写作实用教程 2021 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "galty687/doc-x");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="DITA 深入了解" href="dita-dive-in.html" />
+    <link rel="prev" title="DITA 快速入门" href="dita-quick-demo.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> 技术写作实用教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">研究介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/about.html">本书介绍</a></li>
+</ul>
+<p class="caption"><span class="caption-text">信息开发技术基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../XML/xml.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../XML/css.html">CSS 基本介绍</a></li>
+</ul>
+<p class="caption"><span class="caption-text">基于 DITA 的内容写作</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dita-quick-demo.html">DITA 快速入门</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">故障</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">故障排除信息</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">建模</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">写作风格</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#title"><code class="docutils literal notranslate"><span class="pre">&lt;title&gt;</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">示例</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dita-dive-in.html">DITA 深入了解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita-examples/dita-source-reading.html">DITA源码阅读</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dita_resources.html">DITA 资源</a></li>
+</ul>
+<p class="caption"><span class="caption-text">DITA的样式表开发</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="XSL-FO.html">XSL-FO 样式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dita_stylesheet.html">DITA PDF 样式开发</a></li>
+</ul>
+<p class="caption"><span class="caption-text">技术文档质量</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../doc-quality/doc-quality-intro.html">技术文档质量</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">技术写作实用教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Troubleshooting</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="troubleshooting">
+<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>故障<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>只要用户开始使用产品就会遇到故障，很多用户看手册是要寻找解决问题的信息。<a class="reference external" href="https://research.utwente.nl/en/publications/the-effect-of-error-information-in-tutorial-documentation">根据 Lazonder 等人的研究</a>，用户25%的时间是在应对各类错误。</p>
+</div>
+<div class="section" id="id2">
+<h2>故障排除信息<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h3>结构<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>元素</p></th>
+<th class="head"><p>目的</p></th>
+<th class="head"><p>示例</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>故障识别</p></td>
+<td><p>让用户知道错误的存在</p></td>
+<td><p>DITA 输出中文乱码</p></td>
+</tr>
+<tr class="row-odd"><td><p>故障分析</p></td>
+<td><p>描述错误的原因</p></td>
+<td><p>未指定xml的语言为中文</p></td>
+</tr>
+<tr class="row-even"><td><p>故障排除方法</p></td>
+<td><p>提供解决故障的方式</p></td>
+<td><p>在map元素中增加 xml:lang=”zh_CN”</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id4">
+<h3>建模<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>元素</p></th>
+<th class="head"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;troubleshooting&gt;</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;title&gt;</span></code></p></td>
+<td><p>故障识别</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;condition&gt;</span></code></p></td>
+<td><p>故障发生的条件</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;cause&gt;</span></code></p></td>
+<td><p>诊断</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;remedy&gt;</span></code></p></td>
+<td><p>故障排除方法</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>写作风格<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<div class="section" id="title">
+<h3><code class="docutils literal notranslate"><span class="pre">&lt;title&gt;</span></code><a class="headerlink" href="#title" title="永久链接至标题">¶</a></h3>
+<ol class="simple">
+<li><p>使用用户最有可能描述问题的方式来写标题。</p></li>
+<li><p>增加 <code class="docutils literal notranslate"><span class="pre">&lt;indexterms&gt;</span></code>方便搜索。</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>示例<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>来自dita.xml.org的对各元素的说明</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="cp">&lt;!DOCTYPE troubleshooting</span>
+<span class="cp">  PUBLIC &quot;-//OASIS//DTD DITA Troubleshooting//EN&quot;</span>
+<span class="cp">  &quot;troubleshooting.dtd&quot;&gt;</span>
+<span class="nt">&lt;troubleshooting</span> <span class="na">id=</span><span class="s">&quot;REPLACE_THIS&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;title&gt;</span><span class="c">&lt;!-- State the essential nature of the problem --&gt;</span><span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;shortdesc&gt;</span><span class="c">&lt;!-- Be more specific about the problem here --&gt;</span><span class="nt">&lt;/shortdesc&gt;</span>
+  <span class="nt">&lt;prolog&gt;</span>
+    <span class="nt">&lt;metadata&gt;</span>
+      <span class="nt">&lt;keywords&gt;</span><span class="c">&lt;!--</span>
+<span class="c">          Make sure to use indexterms. Readers often find troubleshooting content through the index.</span>
+<span class="c">          Provide indexterm variants that readers might use. For example:</span>
+<span class="c">        &lt;indexterm&gt;Logon</span>
+<span class="c">          &lt;indexterm&gt;troubleshooting&lt;/indexterm&gt;</span>
+<span class="c">        &lt;/indexterm&gt;</span>
+<span class="c">        &lt;indexterm&gt;troubleshooting</span>
+<span class="c">          &lt;indexterm&gt;Logon&lt;/indexterm&gt;</span>
+<span class="c">        &lt;/indexterm&gt;</span>
+<span class="c">        --&gt;</span>
+      <span class="nt">&lt;/keywords&gt;</span>
+    <span class="nt">&lt;/metadata&gt;</span>
+  <span class="nt">&lt;/prolog&gt;</span>
+  <span class="nt">&lt;troublebody&gt;</span>
+    <span class="nt">&lt;condition&gt;</span><span class="c">&lt;!--</span>
+<span class="c">        The topic title and the shortdesc should have already told your reader a lot about the</span>
+<span class="c">        condition that this topic seeks to fix. Use condition to expand upon that. Do not simply</span>
+<span class="c">        repeat what you have already put into the title and the shortdesc. Condition is the</span>
+<span class="c">        appropriate place to put impact and severity information. If multiple solutions exist and</span>
+<span class="c">        their relationships with each other are complex, you can discuss that here.--&gt;</span>
+      <span class="nt">&lt;title&gt;</span><span class="c">&lt;!-- Optional title. Use &quot;Condition&quot;. --&gt;</span><span class="nt">&lt;/title&gt;</span>
+      <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
+    <span class="nt">&lt;/condition&gt;</span>
+    <span class="nt">&lt;troubleSolution&gt;</span><span class="c">&lt;!--</span>
+<span class="c">        troubleSolution is meant to hold pairs of cause and remedy. Occassionally, you might have</span>
+<span class="c">        cause without remedy or remedy without cause, but that should be rare. Be sure to order</span>
+<span class="c">        mutliple troubleSolution elements in a sequence that makes sense. For example, order them</span>
+<span class="c">        by the likelihood of a cause occuring. You may wish to deviate from that if a remedy for a</span>
+<span class="c">        less likely cause is much easier to try. Remember to use conref for troubleSolution</span>
+<span class="c">        elements that are the same across multiple troubleshooting topics.--&gt;</span>
+      <span class="nt">&lt;cause&gt;</span>
+        <span class="nt">&lt;title&gt;</span><span class="c">&lt;!--</span>
+<span class="c">          Optional title. Use &quot;Cause&quot;. For topics with mutliple troubleSolutions, state the</span>
+<span class="c">          essential nature of this particular cause instead of just using &quot;Cause&quot;.--&gt;</span>
+        <span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
+      <span class="nt">&lt;/cause&gt;</span>
+      <span class="nt">&lt;remedy&gt;</span>
+        <span class="nt">&lt;title&gt;</span><span class="c">&lt;!-- Optional title. Use &quot;Remedy&quot; or &quot;Solution&quot;. --&gt;</span>
+        <span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;responsibleParty&gt;</span><span class="c">&lt;!--</span>
+<span class="c">          Optional. Use this element to indicate the role of who ought to be performing the steps</span>
+<span class="c">          in the remedy. Here are some examples: &quot;engineer&quot;, &quot;customer&quot;, &quot;field-support&quot;.</span>
+<span class="c">        --&gt;</span>
+        <span class="nt">&lt;/responsibleParty&gt;</span>
+        <span class="c">&lt;!-- You can use steps-unordered or steps-informal instead of steps. --&gt;</span>
+        <span class="nt">&lt;steps&gt;</span>
+          <span class="c">&lt;!-- </span>
+<span class="c">               Remember that you can use conref to bring in steps from tasks or other</span>
+<span class="c">               troubleshooting topics. --&gt;</span>
+          <span class="nt">&lt;step&gt;</span>
+            <span class="nt">&lt;cmd/&gt;</span>
+          <span class="nt">&lt;/step&gt;</span>
+        <span class="nt">&lt;/steps&gt;</span>
+      <span class="nt">&lt;/remedy&gt;</span>
+    <span class="nt">&lt;/troubleSolution&gt;</span>
+  <span class="nt">&lt;/troublebody&gt;</span>
+<span class="nt">&lt;/troubleshooting&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dita-dive-in.html" class="btn btn-neutral float-right" title="DITA 深入了解" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dita-quick-demo.html" class="btn btn-neutral float-left" title="DITA 快速入门" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 高志军
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

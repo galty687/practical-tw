@@ -26,14 +26,23 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: 基于 DITA 的文档开发
+   :caption: 基于 DITA 的内容写作
 
    dita/dita-quick-demo.md
+   dita/Troubleshooting.md
    dita/dita-dive-in.md
    dita-examples/dita-source-reading.md
-   dita/XSL-FO.md
-   dita/dita_stylesheet.md
    dita/dita_resources.md
+
+.. toctree::
+   :maxdepth: 2
+   :caption: DITA的样式表开发
+
+   formatting/XSL-FO.md
+   formatting/dita-plugins.md
+   formatting/dita_stylesheet.md
+
+
 
 
 .. toctree::
