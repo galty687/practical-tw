@@ -40,7 +40,7 @@
 
    formatting/XSL-FO.md
    formatting/dita-plugins.md
-   formatting/dita_stylesheet.md
+   formatting/dita_plugin-dev.md
 
 
 

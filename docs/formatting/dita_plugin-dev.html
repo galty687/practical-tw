@@ -1,0 +1,428 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-45957014-6']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DITA PDF 样式plugin制作 &mdash; 技术写作实用教程 2021 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "galty687/doc-x");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="技术文档质量" href="../doc-quality/doc-quality-intro.html" />
+    <link rel="prev" title="DITA Plugins" href="dita-plugins.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> 技术写作实用教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">研究介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/about.html">本书介绍</a></li>
+</ul>
+<p class="caption"><span class="caption-text">信息开发技术基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../XML/xml.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../XML/css.html">CSS 基本介绍</a></li>
+</ul>
+<p class="caption"><span class="caption-text">基于 DITA 的内容写作</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dita/dita-quick-demo.html">DITA 快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita/Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita/dita-dive-in.html">DITA 深入了解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita-examples/dita-source-reading.html">DITA源码阅读</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita/dita_resources.html">DITA 资源</a></li>
+</ul>
+<p class="caption"><span class="caption-text">DITA的样式表开发</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="XSL-FO.html">XSL-FO 样式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dita-plugins.html">DITA Plugins</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">DITA PDF 样式plugin制作</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">前提条件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#org-dita-pdf2">org.dita.pdf2插件</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">找到插件所在位置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">文件夹结构</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#pdf-plugin">创建PDF plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">参考教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">相关资源</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">技术文档质量</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../doc-quality/doc-quality-intro.html">技术文档质量</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">技术写作实用教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>DITA PDF 样式plugin制作</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="dita-pdf-plugin">
+<h1>DITA PDF 样式plugin制作<a class="headerlink" href="#dita-pdf-plugin" title="永久链接至标题">¶</a></h1>
+<p>本文介绍开发<code class="docutils literal notranslate"><span class="pre">DITA-OT</span></code>样式plugin的方法。oXygen 发布内容的引擎，也是基于<code class="docutils literal notranslate"><span class="pre">DITA-OT</span></code>。本文以MacOS系统，并使用HomeBrew安装了DITA-OT为例来说明样式表的开发。其他系统或其他<code class="docutils literal notranslate"><span class="pre">dita-ot</span></code>的安装形式，插件开发大同小异，只是安装方式或调用方式有所不同。</p>
+<div class="section" id="id1">
+<h2>前提条件<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>已经安装好 <code class="docutils literal notranslate"><span class="pre">dita-ot</span></code>	，如何安装<code class="docutils literal notranslate"><span class="pre">DITA-OT</span></code>，请参见<a class="reference external" href="https://www.dita-ot.org/dev/topics/installing-client.html">官方文档</a>。</p>
+</div>
+<div class="section" id="org-dita-pdf2">
+<h2>org.dita.pdf2插件<a class="headerlink" href="#org-dita-pdf2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id2">
+<h3>找到插件所在位置<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<p>HomeBrew安装 <code class="docutils literal notranslate"><span class="pre">dita-ot</span></code>文件夹所在位置，一般在如下几个位置。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Cellar</span><span class="o">/</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>以笔者系统为例：</p>
+<ol class="simple">
+<li><p>在Finder-&gt;Go-&gt;Go to Folder，然后输入</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">Cellar</span><span class="o">/</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>在Cellar文件夹中按照下方路径，继续浏览</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">dita</span><span class="o">-</span><span class="n">ot</span><span class="o">/</span><span class="mf">3.6</span><span class="o">.</span><span class="mi">1</span><span class="o">/</span><span class="n">libexec</span><span class="o">/</span><span class="n">plugins</span><span class="o">/</span><span class="n">org</span><span class="o">.</span><span class="n">dita</span><span class="o">.</span><span class="n">pdf2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>文件夹结构<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p><img alt="文件夹结构" src="../_images/plugin-folder-structure.png" /></p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>项目</p></th>
+<th class="head"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cfg</p></td>
+<td><p>存放样式的主要定义信息，其中还包括 <code class="docutils literal notranslate"><span class="pre">common</span></code> 和 <code class="docutils literal notranslate"><span class="pre">fo</span></code> 两个文件夹</p></td>
+</tr>
+<tr class="row-odd"><td><p>Customization</p></td>
+<td><p>存放用户自定义的样式信息</p></td>
+</tr>
+<tr class="row-even"><td><p>lib</p></td>
+<td><p>存放 Java 可执行程序 <code class="docutils literal notranslate"><span class="pre">fo.jar</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>resource</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>xsl</p></td>
+<td><p>存放 XSLT stylesheet</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="pdf-plugin">
+<h2>创建PDF plugin<a class="headerlink" href="#pdf-plugin" title="永久链接至标题">¶</a></h2>
+<ol>
+<li><p>在plugins文件中，创建 <code class="docutils literal notranslate"><span class="pre">com.company.pdf</span></code>文件夹。</p>
+<blockquote>
+<div><p>Java的命名传统，例如你的公司叫deepdok，可以用 com.deepdok.pdf来命名。还可以进一步增加说明，例如用户手册 (ug)的样式，可以写成。com.deepdok.pdf.ug</p>
+</div></blockquote>
+</li>
+<li><p>模仿 <code class="docutils literal notranslate"><span class="pre">org.dita.pdf</span></code>的文件夹结构分别创建 <code class="docutils literal notranslate"><span class="pre">cfg</span></code> ,<code class="docutils literal notranslate"><span class="pre">fo</span></code>等文件夹和文件夹。</p></li>
+<li><p>在<code class="docutils literal notranslate"><span class="pre">cfg</span></code>文件夹中，新建catalog.xml，并在其中输入如下代码</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;catalog</span> <span class="na">prefer=</span><span class="s">&quot;system&quot;</span> <span class="na">xmlns=</span><span class="s">&quot;urn:oasis:names:tc:entity:xmlns:xml:catalog&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;uri</span> <span class="na">name=</span><span class="s">&quot;cfg:fo/attrs/custom.xsl&quot;</span> <span class="na">uri=</span><span class="s">&quot;fo/attrs/custom.xsl&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;uri</span> <span class="na">name=</span><span class="s">&quot;cfg:fo/xsl/custom.xsl&quot;</span> <span class="na">uri=</span><span class="s">&quot;fo/xsl/custom.xsl&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/catalog&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>在<code class="docutils literal notranslate"><span class="pre">fo/attrs</span></code>创建 custom.xsl文件，并输入如下内容</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;
+    xmlns:fo=&quot;http://www.w3.org/1999/XSL/Format&quot;
+    version=&quot;2.0&quot;&gt;
+&lt;/xsl:stylesheet&gt;
+</pre></div>
+</div>
+</li>
+<li><p>将 custom.xsl 复制到 fo/xsl中。虽然名字一样，但是用途不一样，以后通过 custom.xsl (attrs) 和 custom.xsl(xsl)来区分。</p></li>
+<li><p>在<code class="docutils literal notranslate"><span class="pre">com.company.pdf</span></code>中新建plugin.xml，并输入如下内容</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39;?&gt;</span>
+<span class="nt">&lt;plugin</span> <span class="na">id=</span><span class="s">&quot;com.company.pdf&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;require</span> <span class="na">plugin=</span><span class="s">&quot;org.dita.pdf2&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;feature</span> <span class="na">extension=</span><span class="s">&quot;dita.conductor.transtype.check&quot;</span> <span class="na">value=</span><span class="s">&quot;custpdf&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;feature</span> <span class="na">extension=</span><span class="s">&quot;dita.transtype.print&quot;</span> <span class="na">value=</span><span class="s">&quot;custpdf&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;feature</span> <span class="na">extension=</span><span class="s">&quot;dita.conductor.target.relative&quot;</span> <span class="na">file=</span><span class="s">&quot;integrator.xml&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/plugin&gt;</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">dita.conductor.transtype.check</span></code>和<code class="docutils literal notranslate"><span class="pre">dita.transtype.print</span></code>的值为 <code class="docutils literal notranslate"><span class="pre">custpdf</span></code>，意思是使用 <code class="docutils literal notranslate"><span class="pre">custpdf</span></code>作为转换类型来调用。</p>
+</div></blockquote>
+</li>
+<li><p>在<code class="docutils literal notranslate"><span class="pre">com.company.pdf</span></code>中新建integrator.xml，并输入如下内容</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39;?&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">name=</span><span class="s">&quot;com.company.pdf&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;dita2custpdf.init&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;customization.dir&quot;</span> <span class="na">location=</span><span class="s">&quot;${dita.plugin.com.company.pdf.dir}/cfg&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;pdf2.i18n.skip&quot;</span> <span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/target&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">name=</span><span class="s">&quot;dita2custpdf&quot;</span> <span class="na">depends=</span><span class="s">&quot;dita2custpdf.init, dita2pdf2&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/project&gt;</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Project name 对应插件文件夹</p>
+</div></blockquote>
+</li>
+<li><p>将 <code class="docutils literal notranslate"><span class="pre">org.dita.pdf2/cfg/fo</span></code>中的<code class="docutils literal notranslate"><span class="pre">layout-master.xsl</span></code> 复制一份到 <code class="docutils literal notranslate"><span class="pre">com.company.pdf/cfg/fo/</span></code></p></li>
+</ol>
+<p>最后的文件夹结构图</p>
+<p><img alt="文件夹结构" src="../_images/plugin-structure.png" /></p>
+<ol class="simple">
+<li><p>注册插件，在plugins文件中，运行 <code class="docutils literal notranslate"><span class="pre">dita</span> <span class="pre">install</span></code>，即可注册。</p></li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h2>参考教程<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="https://www.dita-ot.org/dev/topics/pdf-customization-example.html">DITA OT Creating a simple PDF plug-in</a></p>
+</div>
+<div class="section" id="id5">
+<h2>相关资源<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://dita-generator.elovirta.com">PDF Plugin Generator</a></p></li>
+<li><p><a class="reference external" href="https://github.com/oxygenxml/dita-ot-css-pdf">DITA OT CSS PDF</a></p></li>
+<li><p><a class="reference external" href="https://github.com/oxygenxml/com.oxygenxml.pdf2.ug">DITA-OT PDF Customization Plugin for oXygen User Manual</a></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../doc-quality/doc-quality-intro.html" class="btn btn-neutral float-right" title="技术文档质量" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dita-plugins.html" class="btn btn-neutral float-left" title="DITA Plugins" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 高志军
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -84,7 +84,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="DITA PDF 样式开发" href="dita_stylesheet.html" />
+    <link rel="next" title="DITA PDF 样式plugin制作" href="dita_plugin-dev.html" />
     <link rel="prev" title="XSL-FO 样式" href="XSL-FO.html" /> 
 </head>
 
@@ -154,7 +154,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li class="toctree-l2"><a class="reference internal" href="#id1">实例</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="dita_stylesheet.html">DITA PDF 样式开发</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dita_plugin-dev.html">DITA PDF 样式plugin制作</a></li>
 </ul>
 <p class="caption"><span class="caption-text">技术文档质量</span></p>
 <ul>
@@ -232,17 +232,12 @@ commentsRunWhenDOMLoaded(addUtterances);
 <ol>
 <li><p>下载 <a class="reference external" href="https://github.com/oxygenxml/com.oxygenxml.pdf2.ug">oXygen XML 插件</a></p></li>
 <li><p>安装插件</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span> dita install com.oxygenxml.pdf2.ug-master.zip
-</pre></div>
-</div>
-<blockquote>
-<div><p>提示：Added com.oxygenxml.pdf2.ug</p>
-</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">dita</span> <span class="pre">install</span> <span class="pre">com.oxygenxml.pdf2.ug-master.zip</span></code></p>
+<p>提示：Added com.oxygenxml.pdf2.ug</p>
 </li>
 <li><p>使用该插件发布内容。格式为（oxy-ug-pdf）</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>dita --input<span class="o">=</span>projector_user_manual.ditamap --format<span class="o">=</span>oxy-ug-pdf
-</pre></div>
-</div>
+<p><code class="docutils literal notranslate"><span class="pre">dita</span> <span class="pre">--input=projector_user_manual.ditamap</span> <span class="pre">--format=oxy-ug-pdf</span></code></p>
+<p>提示：需要定义中文字体，否则会出现乱码</p>
 </li>
 </ol>
 </div>
@@ -256,7 +251,7 @@ commentsRunWhenDOMLoaded(addUtterances);
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="dita_stylesheet.html" class="btn btn-neutral float-right" title="DITA PDF 样式开发" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="dita_plugin-dev.html" class="btn btn-neutral float-right" title="DITA PDF 样式plugin制作" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="XSL-FO.html" class="btn btn-neutral float-left" title="XSL-FO 样式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

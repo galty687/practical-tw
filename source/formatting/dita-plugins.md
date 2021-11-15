@@ -10,20 +10,20 @@ oXygem XML 将他们公司的手册的样式作为插件分享出来了，我们
 1. 下载 [oXygen XML 插件](https://github.com/oxygenxml/com.oxygenxml.pdf2.ug)
 2. 安装插件 
   
-   ```sh
+
    
-    dita install com.oxygenxml.pdf2.ug-master.zip
+    `dita install com.oxygenxml.pdf2.ug-master.zip`
    
-   ```
+
    
-   > 提示：Added com.oxygenxml.pdf2.ug            
+    提示：Added com.oxygenxml.pdf2.ug            
    
 3. 使用该插件发布内容。格式为（oxy-ug-pdf）
-    ```sh
-    dita --input=projector_user_manual.ditamap --format=oxy-ug-pdf
-    ```
     
-    > 提示：需要定义中文字体，否则会出现乱码
+    `dita --input=projector_user_manual.ditamap --format=oxy-ug-pdf`
+   
+    
+     提示：需要定义中文字体，否则会出现乱码
 
 
 
