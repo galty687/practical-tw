@@ -57,7 +57,7 @@
 
 | 指标           | 含义 | 计算方式 |
 | -------------- | ---- | -------- |
-| Readability    | 评价文档阅读的难易程度 |          |
+| Readability    | 评价文档阅读的难易程度 | [文档](https://readable.com/readability/flesch-reading-ease-flesch-kincaid-grade-level/) |
 | Coh-Metrix | 评价文档的衔接程度 | [文档](http://cohmetrix.memphis.edu/cohmetrixhome/documentation_indices.html) |
 
 

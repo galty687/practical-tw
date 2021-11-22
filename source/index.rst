@@ -49,4 +49,6 @@
    :maxdepth: 2
    :caption: 技术文档质量
 
-   doc-quality/doc-quality-intro.md  
+   doc-quality/doc-quality-intro.md
+   doc-quality/style-guide.md 
+   doc-quality/Vale.md 
