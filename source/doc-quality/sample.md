@@ -7,4 +7,4 @@ Here's a book.
 Pingcap is a database company.
 
 
-pingcap is headquarted in Beijing.
+pingcap is headquartered in Beijing.

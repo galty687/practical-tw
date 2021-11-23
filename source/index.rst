@@ -10,10 +10,11 @@
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: 研究介绍
 
    about/about.rst
+   about/syllabus.md
 
 
 .. toctree::

@@ -187,7 +187,7 @@ limit: 1
 
 #### 规则示例
 
-PingCAP公司是一个知名数据库公司，不少外部人士常常将公司名称写为pingcap或Pingcap等，需要一个规则文本进行检查，确保所有的文本或代码中，均正确使用了 PingCAP 的正确写法。
+PingCAP公司是一个知名数据库公司，不少外部人士常常将公司名称写为pingcap或Pingcap等，需要一个规则文本进行检查，确保所有的文本或代码中，均使用了 PingCAP 的正确写法。
 
 在 Styles 中新建PingCAP文件夹，并在其中新建 `branding.yml` 文件，并在其中输入下方规则
 
