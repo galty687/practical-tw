@@ -14,7 +14,9 @@
    :caption: 研究介绍
 
    about/about.rst
-   about/syllabus.md
+   about/tw-comp-model.md
+   about/syllabus-cat.md
+   about/syllabus-mti.md
 
 
 .. toctree::
@@ -42,6 +44,8 @@
    formatting/XSL-FO.md
    formatting/dita-plugins.md
    formatting/dita_plugin-dev.md
+   formatting/webhelp.md
+
 
 
 
