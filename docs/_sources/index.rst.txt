@@ -18,6 +18,20 @@
    about/syllabus-cat.md
    about/syllabus-mti.md
 
+.. toctree::
+   :maxdepth: 2
+   :caption: 技术写作导论
+
+   introduction/tw.md
+   
+.. toctree::
+   :maxdepth: 2
+   :caption: 用户分析
+
+   user-research/persona.md
+
+
+
 
 .. toctree::
    :maxdepth: 2
@@ -45,6 +59,7 @@
    formatting/dita-plugins.md
    formatting/dita_plugin-dev.md
    formatting/webhelp.md
+   formatting/layout-design.md
 
 
 
