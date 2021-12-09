@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
 
   
   
@@ -133,6 +134,17 @@ commentsRunWhenDOMLoaded(addUtterances);
               <p class="caption"><span class="caption-text">研究介绍</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../about/about.html">本书介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/tw-comp-model.html">技术写作从业能力要求（初级）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/syllabus-cat.html">软件与微电子学院课程安排</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/syllabus-mti.html">外国语学院课程安排</a></li>
+</ul>
+<p class="caption"><span class="caption-text">技术写作导论</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/tw.html">技术写作</a></li>
+</ul>
+<p class="caption"><span class="caption-text">用户分析</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-research/persona.html">虚拟角色</a></li>
 </ul>
 <p class="caption"><span class="caption-text">信息开发技术基础</span></p>
 <ul>
@@ -152,11 +164,21 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li class="toctree-l1"><a class="reference internal" href="../formatting/XSL-FO.html">XSL-FO 样式</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../formatting/dita-plugins.html">DITA Plugins</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../formatting/dita_plugin-dev.html">DITA PDF 样式plugin制作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formatting/webhelp.html">WebHelp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formatting/layout-design.html">文档版面设计</a></li>
 </ul>
 <p class="caption"><span class="caption-text">技术文档质量</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="doc-quality-intro.html">技术文档质量</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">风格指南与检查器</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">风格</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">微软风格</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#inspirational">inspirational</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#responsible">Responsible</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#polite">Polite</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">风格指南</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#linter">Linter</a></li>
 </ul>
 </li>
@@ -226,15 +248,97 @@ commentsRunWhenDOMLoaded(addUtterances);
             
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
 <h1>风格指南与检查器<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p>风格指南一般凝练了整个技术写作团队的多年的精华，成熟的风格指南可以让技术作家快速熟悉团队遣词造句以及行文风格的要求，确保内容的一致性。</p>
+<p>风格指南一般凝练了整个技术写作团队的多年的精华，成熟的风格指南可以让技术作家快速熟悉团队遣词造句以及行文风格的要求，确保内容的一致性。在做技术文档写作的时候，成熟的团队都有有自己的风格指南(style guide)。</p>
+<div class="section" id="id2">
+<h2>风格<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>在讲解风格指南之前，我们先说一说风格，因为有了风格才需要有指南。</p>
+<p>假设有两个人：甲和乙进入咖啡厅点咖啡，他们分别是这样点咖啡的：</p>
+<p>甲</p>
+<blockquote>
+<div><p>Small Coffee</p>
+<p>Extra light, no sugar.</p>
+<p>I’m in a rush.</p>
+</div></blockquote>
+<p>乙</p>
+<blockquote>
+<div><p>Hi, Cynthia. Can I get</p>
+<p>A small coffee,</p>
+<p>Extra light, no sugar?</p>
+<p>Thanks.</p>
+</div></blockquote>
+<p>甲显得比较莽撞，听起来就比较忙，也很不耐烦，而乙则会让人觉得比较体贴，不着急，而且比较友好。语言是思想的外衣，不同的表达方式，会让听众形成不同的观感。</p>
+<p>再以GE和MINI汽车为例，因为历史和品牌定位的不同，两个品牌有了自己的风格。</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>GE</p></th>
+<th class="head"><p>MINI</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>风格</p></td>
+<td><p>- imaginative <br />- responsible<br /> - inspirational</p></td>
+<td><p>- Confident <br />- Joyful <br />- Rebellious</p></td>
+</tr>
+<tr class="row-odd"><td><p>文案</p></td>
+<td><p>Ge works hard to make house a home. <br />We’re determined to solve the world’s biggest problems.</p></td>
+<td><p>You know that the dream you have. <br />But in the vent of a late-night flat tire or wild armadillo attack</p></td>
+</tr>
+</tbody>
+</table>
+<p>GE的信条是“imagination at work”，他们总是想让世界知道，GE每天的工作会让整个世界收益。正是以为你这个目的，我们可以感觉到他们的文案也是想让受众觉得他们的业务非常重要。</p>
+<p>MNI的人群定位是有生活的幽默感，反对世俗，想开心生活，所以文案上也能看出来这一点。</p>
+<p>因为个性所以有了自己的风格，而风格又会影响一个人的讲话的方式。</p>
+</div>
+<div class="section" id="id3">
+<h2>微软风格<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>不仅消费者公司有调性，其实高科技公司也有自己的调性。例如微软公司希望用户能感受到微软是：inspirational, responsible, empathetic, polite, supportive and encouraging，为了达到这个效果，微软也制定了具体的细则来指导工程师的写作。</p>
+<div class="section" id="inspirational">
+<h3>inspirational<a class="headerlink" href="#inspirational" title="永久链接至标题">¶</a></h3>
+<p>要求：强调用户可以做哪些事情，而不是不能做哪些。鼓励用户是帮助用户实现潜能的重要组成部分，帮助用户解决问题，但是如果能有机会让用户尝试之前没有想到的功能也是非常好的。</p>
+<blockquote>
+<div><p>You can add a personal touch to your computer by changing the computer’s theme, color, sounds, desktop background, screen saver, font size, and user account picture.</p>
+</div></blockquote>
+</div>
+<div class="section" id="responsible">
+<h3>Responsible<a class="headerlink" href="#responsible" title="永久链接至标题">¶</a></h3>
+<p>我们的责任不仅仅是一个伟大产品的公司，我们还应该思考用户会如何看待我们的评价。</p>
+<blockquote>
+<div><p>Microsoft style</p>
+<p>Free technical support is available when you register with Microsoft.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Non Microsoft style</p>
+<p>You must register with Microsoft to received free technical support.</p>
+</div></blockquote>
+</div>
+<div class="section" id="polite">
+<h3>Polite<a class="headerlink" href="#polite" title="永久链接至标题">¶</a></h3>
+<p>不应该让用户觉得被冒犯，或者甲方高高在上。</p>
+<blockquote>
+<div><p>Microsoft style</p>
+<p>The file is protected and can’t be deleted without specific permission.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Not Microsoft style</p>
+<p>Can’t delete New Text Document: Access is denied.</p>
+</div></blockquote>
+<p>更多内容，大家可以参见 <a class="reference external" href="https://www.amazon.com/Microsoft-Manual-Style-4th-Corporation/dp/0735648719/ref=sr_1_1?keywords=Microsoft+Manual+of+Style&amp;qid=1639042143&amp;sr=8-1">Microsoft Manual of Style</a></p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>风格指南<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>常见的风格指南：</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.microsoft.com/en-us/style-guide/welcome/">Microsoft Style Guide</a></p></li>
 <li><p><a class="reference external" href="https://developers.google.com/style/">Google Documentation Style Guide</a></p></li>
 <li><p><a class="reference external" href="https://content-guide.18f.gov/our-style/">18F Content Guide</a></p></li>
+<li><p><a class="reference external" href="https://books.apple.com/us/book/apple-style-guide/id1161855204">Apple Style Guide</a></p></li>
 </ul>
+</div>
 <div class="section" id="linter">
 <h2>Linter<a class="headerlink" href="#linter" title="永久链接至标题">¶</a></h2>
+<p>风格指南一般需要搭配检查器共同工作，否则完全靠写作者的记忆，压力较大而且容易出错。</p>
 <p>开发者在写代码的时候，常常需要依赖 <strong>Linter</strong>查找错误、冲突或代码风格等问题。在Docs as Code的开发模式中，也常常将文本当成代码来进行检查。</p>
 <p>常见Linter</p>
 <ul class="simple">
