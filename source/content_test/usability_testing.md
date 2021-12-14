@@ -76,3 +76,7 @@
 1. 使用 UTDL 登录各测试数据
 2. 观察视频，观察其中用户完成任务的过程中遇到的问题
 3. 数据结果的分析并用于文档的改进
+
+
+## 参考资料
+1. [Log usability tests like a pro](https://www.userfocus.co.uk/articles/datalogging.html)
