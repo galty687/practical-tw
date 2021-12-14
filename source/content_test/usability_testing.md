@@ -66,7 +66,7 @@
 
    
 
-2. 写一个rST文件 (Title, Section Title, Bold)
+2. 运行quickstart，写一个rST文件 (Title, Section Title, Bold)
 3. 将整个项目发布为 html 站点
 
 
