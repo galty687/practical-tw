@@ -29,3 +29,7 @@ oXygem XML 将他们公司的手册的样式作为插件分享出来了，我们
 
 
 
+## 其他插件
+1. [DITA to Word plug-in](https://github.com/jelovirt/com.elovirta.ooxml)
+2. [net.infotexture.dita-bootstrap](https://github.com/infotexture/dita-bootstrap)，[demo](https://infotexture.github.io/dita-bootstrap/alerts.html), [Themestr.app](https://themestr.app/theme)
+3. 

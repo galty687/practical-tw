@@ -71,4 +71,5 @@
 
    doc-quality/doc-quality-intro.md
    doc-quality/style-guide.md 
-   doc-quality/Vale.md 
+   doc-quality/Vale.md
+   content_test/usability_testing.md 

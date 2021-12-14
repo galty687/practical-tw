@@ -18,7 +18,7 @@
     </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>DITA Plugins &mdash; 技术写作实用教程 2021 文档</title>
+  <title>可用性测试 &mdash; 技术写作实用教程 2021 文档</title>
   
 
   
@@ -85,8 +85,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="DITA PDF 样式plugin制作" href="dita_plugin-dev.html" />
-    <link rel="prev" title="XSL-FO 样式" href="XSL-FO.html" /> 
+    <link rel="prev" title="Vale" href="../doc-quality/Vale.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -160,22 +159,40 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li class="toctree-l1"><a class="reference internal" href="../dita/dita_resources.html">DITA 资源</a></li>
 </ul>
 <p class="caption"><span class="caption-text">DITA的样式表开发</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="XSL-FO.html">XSL-FO 样式</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">DITA Plugins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">实例</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">其他插件</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="dita_plugin-dev.html">DITA PDF 样式plugin制作</a></li>
-<li class="toctree-l1"><a class="reference internal" href="webhelp.html">WebHelp</a></li>
-<li class="toctree-l1"><a class="reference internal" href="layout-design.html">文档版面设计</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../formatting/XSL-FO.html">XSL-FO 样式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formatting/dita-plugins.html">DITA Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formatting/dita_plugin-dev.html">DITA PDF 样式plugin制作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formatting/webhelp.html">WebHelp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formatting/layout-design.html">文档版面设计</a></li>
 </ul>
 <p class="caption"><span class="caption-text">技术文档质量</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../doc-quality/doc-quality-intro.html">技术文档质量</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../doc-quality/style-guide.html">风格指南与检查器</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../doc-quality/Vale.html">Vale</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">可用性测试</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">可用性指标</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#effectiveness">Effectiveness</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#efficiency">Efficiency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">满意度</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">可用性实验</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">实验流程</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">测试计划</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#sphinx">Sphinx 文档可用性测试</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">环境准备</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">测试任务</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">分析结果</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
             
@@ -222,7 +239,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>DITA Plugins</li>
+      <li>可用性测试</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -239,32 +256,84 @@ commentsRunWhenDOMLoaded(addUtterances);
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="tex2jax_ignore mathjax_ignore section" id="dita-plugins">
-<h1>DITA Plugins<a class="headerlink" href="#dita-plugins" title="永久链接至标题">¶</a></h1>
-<p>在开发DITA样式的时候，一个比较好的实践就是把不同样式制作为插件，例如用户手册插件，参考手册插件，WebHelp插件等。这样在使用的时候比较方便，例如可以让你的同事使用你的样式发布，不需要额外配置，plugin中有全部所需的内容。</p>
-<div class="section" id="id1">
-<h2>实例<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<p>oXygem XML 将他们公司的手册的样式作为插件分享出来了，我们可以尝试安装他们的样式插件，并用于发布自己的内容。</p>
-<p>步骤：</p>
-<ol>
-<li><p>下载 <a class="reference external" href="https://github.com/oxygenxml/com.oxygenxml.pdf2.ug">oXygen XML 插件</a></p></li>
-<li><p>安装插件</p>
-<p><code class="docutils literal notranslate"><span class="pre">dita</span> <span class="pre">install</span> <span class="pre">com.oxygenxml.pdf2.ug-master.zip</span></code></p>
-<p>提示：Added com.oxygenxml.pdf2.ug</p>
-</li>
-<li><p>使用该插件发布内容。格式为（oxy-ug-pdf）</p>
-<p><code class="docutils literal notranslate"><span class="pre">dita</span> <span class="pre">--input=projector_user_manual.ditamap</span> <span class="pre">--format=oxy-ug-pdf</span></code></p>
-<p>提示：需要定义中文字体，否则会出现乱码</p>
-</li>
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>可用性测试<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>可用性指标<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="effectiveness">
+<h3>Effectiveness<a class="headerlink" href="#effectiveness" title="永久链接至标题">¶</a></h3>
+<p>用户能不能完成任务？</p>
+<p>计算方式：</p>
+</div>
+</div>
+<div class="section" id="efficiency">
+<h2>Efficiency<a class="headerlink" href="#efficiency" title="永久链接至标题">¶</a></h2>
+<p>用户完成任务的效率</p>
+</div>
+<div class="section" id="id3">
+<h2>满意度<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>用户完成任务后的满意程度</p>
+</div>
+<div class="section" id="id4">
+<h2>可用性实验<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id5">
+<h3>实验流程<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<ol class="simple">
+<li><p>Develop the Test Plan</p></li>
+<li><p>Setup a testing environment</p></li>
+<li><p>Find and select participants</p></li>
+<li><p>Prepare test materials</p></li>
+<li><p>Conduct the test sessions</p></li>
+<li><p>Debrief the participant and observers</p></li>
+<li><p>Analyze data and observations</p></li>
+<li><p>Report findings and recommendations</p></li>
+</ol>
+<div class="section" id="id6">
+<h4>测试计划<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h4>
+<ul class="simple">
+<li><p>Purpose, goals and objectives of the test</p></li>
+<li><p>Research questions</p></li>
+<li><p>Participant characteristics</p></li>
+<li><p>Method</p></li>
+<li><p>Task list</p></li>
+<li><p>Test environment, equipment, and logistics</p></li>
+<li><p>Test moderator role</p></li>
+<li><p>Data to be collected and evaluation measures</p></li>
+<li><p>Report contents and presentation</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="sphinx">
+<h2>Sphinx 文档可用性测试<a class="headerlink" href="#sphinx" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id7">
+<h3>环境准备<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<ol class="simple">
+<li><p>使用腾讯会议录制桌面与人像</p></li>
+<li><p>使用 <a class="reference external" href="https://www.userfocus.co.uk/resources/datalogger.html">Usability Test Data Logger tool v5.1.1</a> 记录与分析数据</p></li>
 </ol>
 </div>
-<div class="section" id="id2">
-<h2>其他插件<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<ol class="simple">
-<li><p><a class="reference external" href="https://github.com/jelovirt/com.elovirta.ooxml">DITA to Word plug-in</a></p></li>
-<li><p><a class="reference external" href="https://github.com/infotexture/dita-bootstrap">net.infotexture.dita-bootstrap</a>，<a class="reference external" href="https://infotexture.github.io/dita-bootstrap/alerts.html">demo</a>, <a class="reference external" href="https://themestr.app/theme">Themestr.app</a></p></li>
-<li></li>
+<div class="section" id="id8">
+<h3>测试任务<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<ol>
+<li><p>安装sphinx。成功标志：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> $ sphinx-quickstart --version
+ sphinx-quickstart 4.0.1
+</pre></div>
+</div>
+</li>
+<li><p>写一个rST文件 (Title, Section Title, Bold)</p></li>
+<li><p>将整个项目发布为 html 站点</p></li>
 </ol>
+</div>
+<div class="section" id="id9">
+<h3>分析结果<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<ol class="simple">
+<li><p>使用 UTDL 登录各测试数据</p></li>
+<li><p>观察视频，观察其中用户完成任务的过程中遇到的问题</p></li>
+<li><p>数据结果的分析并用于文档的改进</p></li>
+</ol>
+</div>
 </div>
 </div>
 
@@ -276,10 +345,8 @@ commentsRunWhenDOMLoaded(addUtterances);
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="dita_plugin-dev.html" class="btn btn-neutral float-right" title="DITA PDF 样式plugin制作" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="XSL-FO.html" class="btn btn-neutral float-left" title="XSL-FO 样式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../doc-quality/Vale.html" class="btn btn-neutral float-left" title="Vale" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
