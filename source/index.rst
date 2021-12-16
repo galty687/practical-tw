@@ -73,3 +73,10 @@
    doc-quality/style-guide.md 
    doc-quality/Vale.md
    content_test/usability_testing.md 
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: 课程项目
+
+   capstone-project/endnote-doc-usability.md
