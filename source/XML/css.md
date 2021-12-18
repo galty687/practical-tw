@@ -4,7 +4,19 @@
 
 样式语言用于内容的格式呈现。
 
+### 需要掌握的内容：
 
+### 单个
+
+1. 选择元素
+2. 选择类
+3. 选择 id
+
+### 组合
+1.  .ancestor . child {property: value}
+2.  element.class child-element
+3.  element child-element
+4. 
 
 ## CSS语法
 
