@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-45957014-6']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>最小化文档设计 &mdash; 技术写作实用教程 2021 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "galty687/doc-x");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="XML" href="../XML/xml.html" />
+    <link rel="prev" title="虚拟角色" href="../user-research/persona.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> 技术写作实用教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">研究介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/about.html">本书介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/tw-comp-model.html">技术写作从业能力要求（初级）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/syllabus-cat.html">软件与微电子学院课程安排</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/syllabus-mti.html">外国语学院课程安排</a></li>
+</ul>
+<p class="caption"><span class="caption-text">技术写作导论</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/tw.html">技术写作</a></li>
+</ul>
+<p class="caption"><span class="caption-text">用户分析</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-research/persona.html">虚拟角色</a></li>
+</ul>
+<p class="caption"><span class="caption-text">内容设计</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">最小化文档设计</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">传统文档</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">成年学习者</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">最小化文档设计原则</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#choose-an-action-oriented-approach">1. Choose an action-oriented approach</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#anchor-the-tool-in-the-task-domain">2. Anchor the tool in the task domain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#support-error-recognition-and-recovery">3. Support Error Recognition and Recovery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#support-reading-to-do-study-and-locate">4 Support reading to do, study and locate</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">信息开发技术基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../XML/xml.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../XML/css.html">CSS 基本介绍</a></li>
+</ul>
+<p class="caption"><span class="caption-text">基于 DITA 的内容写作</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dita/dita-quick-demo.html">DITA 快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita/Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita/dita-dive-in.html">DITA 深入了解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita-examples/dita-source-reading.html">DITA源码阅读</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita/dita_resources.html">DITA 资源</a></li>
+</ul>
+<p class="caption"><span class="caption-text">DITA的样式表开发</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../formatting/XSL-FO.html">XSL-FO 样式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formatting/dita-plugins.html">DITA Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formatting/dita_plugin-dev.html">DITA PDF 样式plugin制作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formatting/webhelp.html">WebHelp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formatting/layout-design.html">文档版面设计</a></li>
+</ul>
+<p class="caption"><span class="caption-text">技术文档质量</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../doc-quality/doc-quality-intro.html">技术文档质量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-quality/style-guide.html">风格指南与检查器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-quality/Vale.html">Vale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content_test/usability_testing.html">可用性测试</a></li>
+</ul>
+<p class="caption"><span class="caption-text">课程项目</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../capstone-project/endnote-doc-usability.html">EndNote 文档可用性测试小组作业</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">技术写作实用教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>最小化文档设计</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>最小化文档设计<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>传统文档<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>传统文档主要是使用系统化的方法，这种方法的基本思想：把一个复杂问题的求解过程分阶段进行，而且这种分解是自顶向下，逐层分解，使得每个阶段处理的问题都控制在人们容易理解和处理的范围内。这样开发出来的文档，常常比较厚，很多时候文档太长，用户无法阅读完。</p>
+</div>
+<div class="section" id="id3">
+<h2>成年学习者<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<ol class="arabic simple">
+<li><p>没有耐心，想尽快开始做一些有效率的事情</p></li>
+<li><p>在手册和帮助文档中跳读，很少全读</p></li>
+<li><p>犯错，但是修复错误的时候学得最多</p></li>
+<li><p>自我探索时最有动力</p></li>
+<li><p>巨型文档（将每个步骤分解为子步骤的方式）会打消而非鼓励积极性。</p></li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h2>最小化文档设计原则<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="section" id="choose-an-action-oriented-approach">
+<h3>1. Choose an action-oriented approach<a class="headerlink" href="#choose-an-action-oriented-approach" title="永久链接至标题">¶</a></h3>
+<p>Heuristic 1.1 Provide an immediate opportunity to act
+Heuristic 1.2 Encourage and support exploration and innovation
+Heuristic 1.3 Respect the integrity of the user’s activity</p>
+</div>
+<div class="section" id="anchor-the-tool-in-the-task-domain">
+<h3>2. Anchor the tool in the task domain<a class="headerlink" href="#anchor-the-tool-in-the-task-domain" title="永久链接至标题">¶</a></h3>
+<p>Heuristic 2.1 Select or design instructional activities that are real tasks
+Heuristic 2.2 The components of the instruction should reflect the task structure</p>
+</div>
+<div class="section" id="support-error-recognition-and-recovery">
+<h3>3. Support Error Recognition and Recovery<a class="headerlink" href="#support-error-recognition-and-recovery" title="永久链接至标题">¶</a></h3>
+<p>Heuristic 3.1 Prevent mistakes whenever possible
+Heuristic 3.2 Provide error information when actions are error prone or when correction is difficult
+Heuristic 3.3 Provide error information that supports detection, diagnosis, and recovery
+Heuristic 3.4 Provide on-the-spot error information</p>
+</div>
+<div class="section" id="support-reading-to-do-study-and-locate">
+<h3>4 Support reading to do, study and locate<a class="headerlink" href="#support-reading-to-do-study-and-locate" title="永久链接至标题">¶</a></h3>
+<p>Heuristic 4.1 Be brief; don’t spell out everything
+Heuristic 4.2 Provide closure for chapters</p>
+<p>更多信息请访问 Hans Van de Meij教授的 <a class="reference external" href="https://www.utwente.nl/en/bms/ist/minimalism/">MINIMALISM</a> 介绍。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../XML/xml.html" class="btn btn-neutral float-right" title="XML" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../user-research/persona.html" class="btn btn-neutral float-left" title="虚拟角色" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 高志军
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

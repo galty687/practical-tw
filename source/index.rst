@@ -30,7 +30,11 @@
 
    user-research/persona.md
 
+.. toctree::
+   :maxdepth: 2
+   :caption: 内容设计
 
+   design/minimalism.rst
 
 
 .. toctree::
