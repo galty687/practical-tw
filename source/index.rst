@@ -19,26 +19,26 @@
    about/syllabus-mti.md
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: 技术写作导论
 
    introduction/tw.md
    
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: 用户分析
 
    user-research/persona.md
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: 内容设计
 
    design/minimalism.rst
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: 信息开发技术基础
 
    XML/xml.rst
@@ -46,7 +46,7 @@
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: 基于 DITA 的内容写作
 
    dita/dita-quick-demo.md
@@ -56,7 +56,7 @@
    dita/dita_resources.md
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: DITA的样式表开发
 
    formatting/XSL-FO.md
@@ -84,3 +84,5 @@
    :caption: 课程项目
 
    capstone-project/endnote-doc-usability.md
+   capstone-project/book-authoring.rst
+   about/style.rst

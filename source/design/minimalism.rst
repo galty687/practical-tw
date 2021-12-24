@@ -51,10 +51,19 @@ Heuristic 4.1 Be brief; don’t spell out everything
 Heuristic 4.2 Provide closure for chapters
 
 
+.. tip:: 屯特大学极简主义详细介绍
 
-更多信息请访问 Hans Van de Meij教授的 `MINIMALISM`_ 介绍。
+   更多信息请访问 Hans Van de Meij教授的 `MINIMALISM`_ 介绍。
 
 .. _MINIMALISM: https://www.utwente.nl/en/bms/ist/minimalism/
+
+
+
+
+
+
+
+
 
 
 
