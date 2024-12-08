@@ -1,0 +1,447 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45957014-6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-45957014-6');
+    </script>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>通过CSS定制PDF输出样式 &mdash; 技术写作实用教程 2021 文档</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=be9b6ff4" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=4e5a66f2"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "galty687/doc-x");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="技术文档质量" href="../doc-quality/doc-quality-intro.html" />
+    <link rel="prev" title="文档版面设计" href="layout-design.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            技术写作实用教程
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">研究介绍</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/about.html">本书介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/tw-comp-model.html">技术写作从业能力要求（初级）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/syllabus-cat.html">软件与微电子学院课程安排</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/syllabus-mti.html">外国语学院课程安排</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">技术写作导论</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/tw.html">技术写作</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">用户分析</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-research/persona.html">虚拟角色</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">内容设计</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../design/minimalism.html">最小化文档设计</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">信息开发技术基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../XML/xml.html">XML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../XML/css.html">CSS 基本介绍</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">基于 DITA 的内容写作</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dita/dita-quick-demo.html">DITA 快速入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita/Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita/dita-dive-in.html">DITA 深入了解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita-examples/dita-source-reading.html">DITA源码阅读</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dita/dita_resources.html">DITA 资源</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">DITA的样式表开发</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="XSL-FO.html">XSL-FO 样式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dita-plugins.html">DITA Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dita_plugin-dev.html">DITA PDF 样式plugin制作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webhelp.html">WebHelp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="layout-design.html">文档版面设计</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">通过CSS定制PDF输出样式</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">排版基础</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">字体</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">定制模板</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pdf">PDF外观定制</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">导入字体</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">指定正文字体</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">定制封面</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#logo">添加logo与出品机构</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">微调logo与出品机构</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#a"><strong><code class="docutils literal notranslate"><span class="pre">\A</span></code> 的作用</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id8">微调封面标题</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">定制章节标题</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">简化页眉页脚</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">傻瓜式定制模板</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">参考</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">技术文档质量</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../doc-quality/doc-quality-intro.html">技术文档质量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-quality/style-guide.html">风格指南与检查器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doc-quality/Vale.html">Vale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content_test/usability_testing.html">可用性测试</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">课程项目</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../capstone-project/endnote-doc-usability.html">EndNote 文档可用性测试小组作业</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../capstone-project/book-authoring.html">《技术写作实用教程》写作说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/style.html">教材写作风格指南</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">技术写作实用教程</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">通过CSS定制PDF输出样式</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="csspdf">
+<h1>通过CSS定制PDF输出样式<a class="headerlink" href="#csspdf" title="Link to this heading"></a></h1>
+<section id="id1">
+<h2>排版基础<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<section id="id2">
+<h3>字体<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p>当我们选择加粗的时候，实际上应用的是粗体的字集，所以一般都要提前准备好对应的字库。</p>
+<p>本次练习，我们选择MI Sans 作为汉字字体，下载：<a class="reference external" href="https://hyperos.mi.com/font/en/download/">MI Sans</a></p>
+</section>
+</section>
+<section id="id3">
+<h2>定制模板<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>导出模板。</p></li>
+</ol>
+</section>
+<section id="pdf">
+<h2>PDF外观定制<a class="headerlink" href="#pdf" title="Link to this heading"></a></h2>
+<section id="id4">
+<h3>导入字体<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<p><strong><code class="docutils literal notranslate"><span class="pre">&#64;font-face</span></code></strong> 是一个 CSS 规则，用于自定义字体，让开发者可以将特定的字体文件加载到PDF中，而不依赖用户系统中预装的字体。</p>
+<p>这里我们引入MISans的不同字重(Weight)的字体，分别是：</p>
+<ul class="simple">
+<li><p>Normal</p></li>
+<li><p>Bold</p></li>
+<li><p>Thin</p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">font-face</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span><span class="nt">font-family</span><span class="o">:</span><span class="w"> </span><span class="nt">xiaomi-normal</span><span class="o">;</span>
+<span class="w">	</span><span class="nt">src</span><span class="o">:</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="nt">resources</span><span class="o">/</span><span class="nt">fonts</span><span class="o">/</span><span class="nt">MiSans-Normal</span><span class="p">.</span><span class="nc">ttf</span><span class="o">);</span>
+<span class="p">}</span>
+
+<span class="p">@</span><span class="k">font-face</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span><span class="nt">font-family</span><span class="o">:</span><span class="w"> </span><span class="nt">xiaomi-bold</span><span class="o">;</span>
+<span class="w">	</span><span class="nt">src</span><span class="o">:</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="nt">resources</span><span class="o">/</span><span class="nt">fonts</span><span class="o">/</span><span class="nt">MiSans-Bold</span><span class="p">.</span><span class="nc">ttf</span><span class="o">);</span>
+<span class="p">}</span>
+
+
+<span class="p">@</span><span class="k">font-face</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span><span class="nt">font-family</span><span class="o">:</span><span class="w"> </span><span class="nt">xiaomi-thin</span><span class="o">;</span>
+<span class="w">	</span><span class="nt">src</span><span class="o">:</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="nt">resources</span><span class="o">/</span><span class="nt">fonts</span><span class="o">/</span><span class="nt">MiSans-Thin</span><span class="p">.</span><span class="nc">ttf</span><span class="o">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h3>指定正文字体<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p>正文字体决定了整个文档的观感，因为正文是全手册文字最多的。</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="c">/* 用正常字体 */</span>
+
+<span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">pt</span><span class="p">;</span>
+<span class="w">	</span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">xiaomi-normal</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* 用瘦体 */</span>
+
+<span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">pt</span><span class="p">;</span>
+<span class="w">	</span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">xiaomi-thin</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>大家感觉一下，哪个更高级，是不是瘦的字体更显高级？</p>
+<blockquote>
+<div><p>S.H.E法则（纤细的，瘦弱的）</p>
+</div></blockquote>
+</section>
+<section id="id6">
+<h3>定制封面<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<p>需要在封面添加下方三个要素：</p>
+<ol class="arabic simple">
+<li><p>右上角的小米logo</p></li>
+<li><p>正下方添加出品机构  Xiaomi Group</p></li>
+<li><p>说明书标题调整（dita map的title）</p></li>
+</ol>
+<p>Page Media各区域的划分如下：</p>
+<p><img alt="css-page-area" src="../_images/css-page-area.png" /></p>
+<section id="logo">
+<h4>添加logo与出品机构<a class="headerlink" href="#logo" title="Link to this heading"></a></h4>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="c">/* 添加 logo */</span>
+<span class="c">/* 添加出品机构 */</span>
+
+
+<span class="p">@</span><span class="k">page</span><span class="w"> </span><span class="nt">front-page</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span><span class="p">@</span><span class="k">top-right-corner</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="nt">content</span><span class="o">:</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s2">&quot;resources/images/logo.png&quot;</span><span class="o">);</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="p">@</span><span class="k">bottom-center</span><span class="p">{</span>
+<span class="w">		</span><span class="nt">content</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Xiaomi Group&quot;</span><span class="o">;</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="w">  </span>
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h4>微调logo与出品机构<a class="headerlink" href="#id7" title="Link to this heading"></a></h4>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">@</span><span class="k">page</span><span class="w"> </span><span class="nt">front-page</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span><span class="p">@</span><span class="k">top-right-corner</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="nt">content</span><span class="o">:</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s2">&quot;resources/images/logo.png&quot;</span><span class="o">);</span>
+<span class="c">/* 往下调整一下logo的位置 */</span><span class="w">		</span>
+<span class="w">		</span><span class="nt">margin-top</span><span class="o">:</span><span class="w"> </span><span class="nt">30px</span><span class="o">;</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="p">@</span><span class="k">bottom-center</span><span class="p">{</span>
+<span class="w">		</span><span class="nt">content</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Xiaomi Group \A 2024.11.11 &quot;</span><span class="o">;</span>
+<span class="c">/* 微调字体 */</span>
+<span class="w">    </span><span class="nt">white-space</span><span class="o">:</span><span class="w"> </span><span class="nt">pre</span><span class="o">;</span>
+<span class="w">		</span><span class="nt">font-size</span><span class="o">:</span><span class="w"> </span><span class="nt">10pt</span><span class="o">;</span>
+<span class="w">		</span><span class="nt">color</span><span class="o">:</span><span class="w"> </span><span class="nt">gray</span><span class="o">;</span>
+<span class="w">		</span><span class="nt">font-style</span><span class="o">:</span><span class="w"> </span><span class="nt">italic</span><span class="o">;</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="w">  </span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="a">
+<h3><strong><code class="docutils literal notranslate"><span class="pre">\A</span></code> 的作用</strong><a class="headerlink" href="#a" title="Link to this heading"></a></h3>
+<ul>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">\A</span></code></strong> 是 CSS 的一种特殊字符表示法，用于在 <code class="docutils literal notranslate"><span class="pre">content</span></code> 属性中插入“换行符”。</p></li>
+<li><p>它的效果需要结合 <strong><code class="docutils literal notranslate"><span class="pre">white-space:</span> <span class="pre">pre</span></code></strong> 或 <strong><code class="docutils literal notranslate"><span class="pre">white-space:</span> <span class="pre">pre-wrap</span></code></strong> 属性才能实现换行。</p></li>
+<li><p>工作原理</p>
+<p>：</p>
+<ul class="simple">
+<li><p>当 CSS 渲染内容时，<code class="docutils literal notranslate"><span class="pre">content:</span> <span class="pre">&quot;Line</span> <span class="pre">1\A</span> <span class="pre">Line</span> <span class="pre">2&quot;;</span></code> 会在“Line 1”和“Line 2”之间插入一个换行符。</p></li>
+<li><p>如果没有启用 <code class="docutils literal notranslate"><span class="pre">white-space:</span> <span class="pre">pre</span></code> 或类似值，换行符会被忽略。</p></li>
+</ul>
+</li>
+</ul>
+<section id="id8">
+<h4>微调封面标题<a class="headerlink" href="#id8" title="Link to this heading"></a></h4>
+<p>基本语法</p>
+<p><strong>1. <code class="docutils literal notranslate"><span class="pre">*</span></code>（通配选择器）</strong></p>
+<ul class="simple">
+<li><p><strong>作用</strong>：选择所有元素。</p></li>
+<li><p><strong>范围</strong>：无论元素是 <code class="docutils literal notranslate"><span class="pre">div</span></code>、<code class="docutils literal notranslate"><span class="pre">p</span></code>、<code class="docutils literal notranslate"><span class="pre">h1</span></code>，只要它满足条件，都会应用此样式。</p></li>
+</ul>
+<p><strong>2. <code class="docutils literal notranslate"><span class="pre">[class</span> <span class="pre">~=</span> <span class="pre">&quot;front-page/front-page-title&quot;]</span></code></strong></p>
+<ul class="simple">
+<li><p><strong>属性选择器</strong>：匹配带有 <code class="docutils literal notranslate"><span class="pre">class</span></code> 属性，且其值中包含 <strong>以空格分隔的单词 <code class="docutils literal notranslate"><span class="pre">front-page/front-page-title</span></code></strong> 的元素。</p></li>
+<li><p><strong>条件</strong>：<code class="docutils literal notranslate"><span class="pre">~=</span></code> 操作符要求 <code class="docutils literal notranslate"><span class="pre">class</span></code> 的值中存在一个单独的单词与 <code class="docutils literal notranslate"><span class="pre">front-page/front-page-title</span></code> 完全匹配。</p></li>
+</ul>
+<p>可以找到 <code class="docutils literal notranslate"><span class="pre">projector.merged.html</span></code>，在html中查找各元素的属性。</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="o">*[</span><span class="nt">class</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="s2">&quot;front-page/front-page-title&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">xiaomi-bold</span><span class="p">;</span>
+<span class="w">	</span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="kt">pt</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id9">
+<h3>定制章节标题<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<p>将标题设置为小米黄<code class="docutils literal notranslate"><span class="pre">#FF6900</span></code>，同时调大字体。</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="o">*[</span><span class="nt">class</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="s2">&quot;topictitle1&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">xiaomi-normal</span><span class="p">;</span>
+<span class="w">	</span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="kt">pt</span><span class="p">;</span>
+<span class="w">	</span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#FF6900</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+<span class="o">*[</span><span class="nt">class</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="s2">&quot;topictitle2&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">xiaomi-normal</span><span class="p">;</span>
+
+<span class="w">	</span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="kt">pt</span><span class="p">;</span>
+<span class="w">	</span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#FF6900</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id10">
+<h2>简化页眉页脚<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<p>只保留章节标题和页码。</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">counter(page)</span></code></strong>：</p>
+<ul class="simple">
+<li><p>动态计数器，表示当前页面的页码。</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">page</span></code> 是 CSS 内置计数器</strong>，自动递增，无需显式定义。</p></li>
+</ul>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="c">/*从全局变量 chaptertitle 中获取动态内容。*/</span>
+
+
+<span class="p">@</span><span class="k">page</span><span class="w"> </span><span class="p">:</span><span class="nd">left</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">@</span><span class="k">top-left</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">content</span><span class="o">:</span><span class="w"> </span><span class="nt">string</span><span class="o">(</span><span class="nt">chaptertitle</span><span class="o">)</span><span class="w"> </span><span class="s2">&quot; | &quot;</span><span class="w"> </span><span class="nt">counter</span><span class="o">(</span><span class="nt">page</span><span class="o">);</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="p">@</span><span class="k">page</span><span class="w"> </span><span class="p">:</span><span class="nd">right</span><span class="p">{</span>
+<span class="w">    </span><span class="p">@</span><span class="k">top-right</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">content</span><span class="o">:</span><span class="w"> </span><span class="nt">string</span><span class="o">(</span><span class="nt">chaptertitle</span><span class="o">)</span><span class="w"> </span><span class="s2">&quot; | &quot;</span><span class="w"> </span><span class="nt">counter</span><span class="o">(</span><span class="nt">page</span><span class="o">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id11">
+<h2>傻瓜式定制模板<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<p><a class="reference external" href="https://styles.oxygenxml.com/?_gl=1*1jy168z*_ga*MTI4NzYyMjkxOC4xNzI5NDE3MzI5*_ga_CKSFNYE9EY*MTczMzY3MDc1Ni4zMC4xLjE3MzM2NzEwNzguNTkuMC4w*_ga_HEWSDXWJSN*MTczMzY3MDc1Ni4yOC4xLjE3MzM2NzEwNzguMC4wLjA.">Styles Basket</a> 可以让用户通过图形界面简单操作即可生成基础模板，并可使用css进一步定制。</p>
+</section>
+<section id="id12">
+<h2>参考<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.oxygenxml.com/doc/versions/23.0/ug-ope/topics/dcpp_the_customization_css.html">Customizing PDF Output Using CSS</a></p></li>
+<li><p><a class="reference external" href="https://hyperos.mi.com/font/en/download/">MI Sans</a></p></li>
+<li><p><a class="reference external" href="https://styles.oxygenxml.com/?_gl=1*1mtx7jj*_ga*MTI4NzYyMjkxOC4xNzI5NDE3MzI5*_ga_CKSFNYE9EY*MTczMzY3MDc1Ni4zMC4xLjE3MzM2NzEwNzguNTkuMC4w*_ga_HEWSDXWJSN*MTczMzY3MDc1Ni4yOC4xLjE3MzM2NzEwNzguMC4wLjA.">Oxygen Styles Basket</a></p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="layout-design.html" class="btn btn-neutral float-left" title="文档版面设计" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../doc-quality/doc-quality-intro.html" class="btn btn-neutral float-right" title="技术文档质量" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 高志军。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
