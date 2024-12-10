@@ -29,6 +29,7 @@
    :caption: 用户分析
 
    user-research/persona.md
+   user-research/focus-group.md
 
 .. toctree::
    :maxdepth: 1
@@ -53,6 +54,7 @@
    dita/Troubleshooting.md
    dita/dita-dive-in.md
    dita-examples/dita-source-reading.md
+   dita/lightweight-dita.md
    dita/dita_resources.md
 
 .. toctree::

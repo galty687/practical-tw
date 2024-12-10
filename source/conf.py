@@ -22,7 +22,7 @@ copyright = '高志军'
 author = 'Zhijun'
 
 # The full version, including alpha/beta/rc tags
-release = '2024'
+release = ''
 
 
 # -- General configuration ---------------------------------------------------
