@@ -251,3 +251,4 @@ Page Media各区域的划分如下：
 1. [Customizing PDF Output Using CSS](https://www.oxygenxml.com/doc/versions/23.0/ug-ope/topics/dcpp_the_customization_css.html)
 1. [MI Sans](https://hyperos.mi.com/font/en/download/)
 1. [Oxygen Styles Basket](https://styles.oxygenxml.com/?_gl=1*1mtx7jj*_ga*MTI4NzYyMjkxOC4xNzI5NDE3MzI5*_ga_CKSFNYE9EY*MTczMzY3MDc1Ni4zMC4xLjE3MzM2NzEwNzguNTkuMC4w*_ga_HEWSDXWJSN*MTczMzY3MDc1Ni4yOC4xLjE3MzM2NzEwNzguMC4wLjA.)
+2. [CSS Customization Webinar](https://www.oxygenxml.com/doc/versions/27.0/ug-editor/topics/dcpp_overview.html)

@@ -15,7 +15,7 @@
 
     .. example::
     
-    “虚拟角色的创建”的topic，命名为 `the-creation-of-persona.dita` 
+        “虚拟角色的创建”的topic，命名为 `the-creation-of-persona.dita` 
     
 
 图片
