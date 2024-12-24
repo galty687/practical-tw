@@ -16,7 +16,7 @@
    about/about.rst
    about/tw-comp-model.md
    about/syllabus-cat.md
-   about/syllabus-mti.md
+  
 
 .. toctree::
    :maxdepth: 1

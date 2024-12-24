@@ -9,7 +9,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Print to PDF"
-msgstr "列印成 PDF"
+msgstr "打印 PDF"
 
 msgid "Theme by the"
 msgstr "主题作者："
