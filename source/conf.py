@@ -44,6 +44,8 @@ source_suffix = {
     '.md': 'markdown',
 }
 
+html_baseurl = "https://tw.gaozhijun.me"
+
 todo_include_todos=True
 
 # Add any paths that contain templates here, relative to this directory.
