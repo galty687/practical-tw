@@ -23,6 +23,7 @@
    :caption: 技术写作导论
 
    introduction/tw.md
+   introduction/theories.md
    
 .. toctree::
    :maxdepth: 1
