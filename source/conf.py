@@ -87,7 +87,7 @@ html_css_files = [
 
 #Google Analytics
 
-googleanalytics_id = 'UA-45957014-6'
+googleanalytics_id = '495469860'
 
 
 #Utterance Comments
