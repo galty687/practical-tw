@@ -16,6 +16,7 @@
    about/about.rst
    about/tw-comp-model.md
    about/syllabus-cat.md
+   about/resources.md
   
 
 .. toctree::
