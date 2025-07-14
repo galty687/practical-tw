@@ -25,6 +25,8 @@
 
    introduction/tw.md
    introduction/theories.md
+   introduction/phsy.md
+   introduction/steps.md
    
 .. toctree::
    :maxdepth: 1
